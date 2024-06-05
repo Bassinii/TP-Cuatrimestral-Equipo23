@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Exclude Roslyn compiler files (if they are being excluded)
+!/Site/bin/roslyn/
+
 # User-specific files
 *.rsuser
 *.suo
