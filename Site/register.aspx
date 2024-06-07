@@ -10,6 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <label>Nombre usuario</label>
+            <asp:TextBox ID="TextBoxUsuario" runat="server"></asp:TextBox>
+            <label>apellido</label>
+            <asp:TextBox ID="TextBoxApellido" runat="server"></asp:TextBox>
+            <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" />
         </div>
     </form>
 </body>
