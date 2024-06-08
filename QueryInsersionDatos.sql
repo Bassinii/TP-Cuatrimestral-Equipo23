@@ -39,7 +39,7 @@ INSERT INTO Imagenes (ID_Articulo, URL_Imagen) VALUES
 (9, 'https://example.com/image9.jpg');
 
 -- Inserción de datos en la tabla Empleados
-INSERT INTO Empleados (Nombre, Apellido, Legajo, Contraseña) VALUES 
+INSERT INTO Empleados (Nombre, Apellido, Legajo, Contrasenia) VALUES 
 ('Juan', 'Pérez', 1234, 'password123'),
 ('María', 'Gómez', 5678, 'password456'),
 ('Carlos', 'Fernández', 9101, 'password789'),
