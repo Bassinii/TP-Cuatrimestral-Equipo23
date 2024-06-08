@@ -2,6 +2,9 @@
 -- para el despliegue de la aplicacion del TPCuatrimestral.
 -- Hay otra Query en el proyecto para la insersión de datos de test.
 
+-- Faltaria hacer que cada local tenga su propio stock, propias ventas, en general hacer la logica 
+-- para cada local.
+
 CREATE DATABASE TPCuatrimestral;
 GO
 USE TPCuatrimestral;
