@@ -18,6 +18,6 @@
             <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" />
         </div>
     </form>
-    <asp:HyperLink ID="LinkRegistrarse" runat="server" NavigateUrl="register.aspx">tenes cuenta? Registrate</asp:HyperLink>
+    <asp:HyperLink ID="LinkRegistrarse" runat="server" NavigateUrl="register.aspx">Registrar Nuevo Usuario</asp:HyperLink>
 </body>
 </html>
