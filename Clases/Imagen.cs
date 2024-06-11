@@ -11,5 +11,10 @@ namespace Clases
         public int id { get; set; }
         public int idArticulo { get; set; }
         public string url { get; set; }
+        public Imagen(int idA, string urlImag)
+        {
+            this.idArticulo = idA;
+            this.url = urlImag;
+        }
     }
 }

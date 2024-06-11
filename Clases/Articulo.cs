@@ -12,8 +12,9 @@ namespace Clases
         public int stock { get; set; }
         public float precio { get; set; }
         public List<Imagen> imagenes { get; set; }
-        public Marca marca { get; set; }
-        public Categoria categoria { get; set; }
+        public Marca marca { get; set; } = new Marca();   
+        public Categoria categoria { get; set; } = new Categoria();    
 
+       
     }
 }
