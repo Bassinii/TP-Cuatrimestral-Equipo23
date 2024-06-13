@@ -95,6 +95,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Styles.css" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
