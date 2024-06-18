@@ -7,7 +7,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Gestión de Marcas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
-
+    <style>
+        .btn-primary {
+            background-color: #28a745; /* Verde Bootstrap */
+            border-color: #28a745; /* Verde Bootstrap */
+        }
+        .btn-primary:hover {
+            background-color: #218838; /* Verde más oscuro para el hover */
+            border-color: #1e7e34; /* Verde más oscuro para el hover */
+        }
+    </style>
 
 </head>
 <body>
@@ -20,12 +29,12 @@
                 Negocio.NegocioMarca negocioM = new Negocio.NegocioMarca();
                 List<Clases.Marca> ListM = negocioM.listar();
             %>
-            <table class="table table-success table-striped">
+            <table class="table table-success table-striped table-hover">
               <thead>
                 <tr>
                   <th scope="col">ID MARCA</th>
                   <th scope="col">NOMBRE MARCA</th>
-               
+                  <th scope="col">ACCIONES</th>
                 </tr>
               </thead>
               <tbody>
@@ -37,45 +46,28 @@
                   
                   <td><%=objM.id %></td>
                   <td><%=objM.nombre %></td>
+                  <td>
+                <a href='<%= "EditarMarca.aspx?id=" + objM.id %>' class="btn btn-primary btn-sm">Modificar</a>
+                    <!-- aca enviamos id a la ventana editarMarca-->
+                </td>
                 </tr>
                     <%} %>
               </tbody>
             </table>
-        </div>
-        <!-- agregar y modificar marcas -->
-         <!-- agregar y modificar marcas -->
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  AGREGAR MARCAS
-</button>
+             </div>
 
-<!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                        <!-- Formulario para ingresar el nombre de la marca -->
-          <div class="mb-3">
-            <label for="nombreMarca" class="form-label">Nombre de la Marca</label>
-            <input type="text" class="form-control" id="nombreMarca" name="nombreMarca" required="required"/>
-          </div>
-               
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <asp:Button runat="server" ID="BtnGuardar" Text="Guardar" CssClass="btn btn-primary" OnClick="BtnGuardar_Click" />
-
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Button to add new brand -->
+        <a href="EditarMarca.aspx" class="btn btn-success">Agregar Marca</a>
+        <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
     </form>
-    <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <script>
+        // Script para manejar la selección de filas en la tabla
+        $(document).ready(function () {
+            $('#tablaMarcas tbody').on('click', 'tr', function () {
+                $(this).toggleClass('table-active'); // Aplicar clase de selección cuando se hace clic en una fila
+            });
+        });
+</script>
 </body>
 </html>
