@@ -1,10 +1,7 @@
-﻿using System;
+﻿using Clases;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using Clases;
 
 namespace Negocio
 {
@@ -49,6 +46,78 @@ namespace Negocio
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public Marca obtenerPorId(string idMarca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT * FROM Marcas WHERE ID_Marca = @id");
+                datos.setearParametro("@id", idMarca);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    Marca marca = new Marca();
+                    marca.id = datos.Lector.GetInt32(0);
+                    marca.nombre = datos.Lector["Nombre"].ToString();
+                    return marca;
+                }
+                else
+                {
+                    throw new Exception("No se encontró la marca con el ID proporcionado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        public void actualizar(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Marcas SET Nombre = @nombre WHERE ID_Marca = @id");
+                datos.setearParametro("@nombre", marca.nombre);
+                datos.setearParametro("@id", marca.id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+               // MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        public void eliminar(int idMarca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM Marcas WHERE ID_Marca = @id");
+                datos.setearParametro("@id", idMarca);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
             }
         }
     }
