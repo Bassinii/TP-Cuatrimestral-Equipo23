@@ -1,0 +1,9 @@
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\bin\Debug\Negocio.dll
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\bin\Debug\Clases.dll
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\bin\Debug\Clases.pdb
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\obj\Debug\Negocio.dll
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Negocio\obj\Debug\Negocio.pdb

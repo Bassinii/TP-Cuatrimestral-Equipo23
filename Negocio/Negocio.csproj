@@ -44,6 +44,9 @@
     <Compile Include="AcesoDatos.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="NegocioArticulo.cs" />
+    <Compile Include="NegocioCategoria.cs" />
+    <Compile Include="NegocioCliente.cs" />
+    <Compile Include="NegocioMarca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
