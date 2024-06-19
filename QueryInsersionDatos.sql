@@ -51,18 +51,26 @@ INSERT INTO Empleados (Nombre, Apellido, Legajo, Contrasenia) VALUES
 ('Jorge', 'Díaz', 1222, 'password222'),
 ('Sofía', 'Romero', 3242, 'password333');
 
+-- Inserción de datos en la tabla Clientes
+INSERT INTO Clientes (Nombre, Apellido, Direccion, Mail, Telefono) VALUES 
+('Daniela', 'Bentancor', '123 Calle Falsa', 'Daniela.Bent@example.com', '123456789'),
+('Bruno', 'Bassini', '456 Avenida Siempreviva', 'Bruno.Bas@example.com', '987654321'),
+('Sergio', 'Sánchez', '789 Camino Real', 'Sergio.San@example.com', '564738291'),
+('Ana', 'Pérez', '1010 Plaza Mayor', 'ana.perez@example.com', '374829102'),
+('Jose', 'Fernández', '1111 Gran Vía', 'jose.fernandez@example.com', '938475610');
+
 -- Inserción de datos en la tabla Ventas
-INSERT INTO Ventas (ID_Empleado, Fecha, Hora, Subtotal, Total, EsPedidosYa) VALUES 
-(1, GETDATE(), '10:00:00', 4990.00, 4990.00, 0),
-(2, GETDATE(), '11:00:00', 4990.00, 4990.00, 0),
-(3, GETDATE(), '12:00:00', 4990.00, 4990.00, 0),
-(4, GETDATE(), '13:00:00', 4990.00, 4990.00, 1),
-(5, GETDATE(), '14:00:00', 6350.00, 6350.00, 0),
-(6, GETDATE(), '15:00:00', 3990.00, 3990.00, 0),
-(7, GETDATE(), '16:00:00', 4600.00, 4600.00, 1),
-(8, GETDATE(), '17:00:00', 4600.00, 4600.00, 0),
-(9, GETDATE(), '18:00:00', 4600.00, 4600.00, 1),
-(10, GETDATE(), '19:00:00', 4600.00, 4600.00, 0);
+INSERT INTO Ventas (ID_Empleado, ID_Cliente, Fecha, Hora, Subtotal, Total, EsPedidosYa) VALUES 
+(1, 1, GETDATE(), '10:00:00', 4990.00, 4990.00, 0),
+(2, 2, GETDATE(), '11:00:00', 4990.00, 4990.00, 0),
+(3, 3, GETDATE(), '12:00:00', 4990.00, 4990.00, 0),
+(4, 4, GETDATE(), '13:00:00', 4990.00, 4990.00, 1),
+(5, 5, GETDATE(), '14:00:00', 6350.00, 6350.00, 0),
+(6, 1, GETDATE(), '15:00:00', 3990.00, 3990.00, 0),
+(7, 2, GETDATE(), '16:00:00', 4600.00, 4600.00, 1),
+(8, 3, GETDATE(), '17:00:00', 4600.00, 4600.00, 0),
+(9, 4, GETDATE(), '18:00:00', 4600.00, 4600.00, 1),
+(10, 5, GETDATE(), '19:00:00', 4600.00, 4600.00, 0);
 
 -- Inserción de datos en la tabla DetallesVentas
 INSERT INTO DetallesVentas (ID_Venta, ID_Articulo, Cantidad, Precio_Unitario, Porcentaje_Descuento) VALUES 

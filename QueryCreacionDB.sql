@@ -43,15 +43,28 @@ CREATE TABLE Empleados(
     Contrasenia VARCHAR(200) NOT NULL
 );
 
+-- Creación de la tabla Clientes
+CREATE TABLE Clientes (
+    ID_Cliente INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    Apellido VARCHAR(50) NOT NULL,
+    Direccion VARCHAR(100) NOT NULL,
+    Mail VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(20) NOT NULL
+);
+
+
 CREATE TABLE Ventas (
     ID_Venta INT IDENTITY(1,1) PRIMARY KEY,
     ID_Empleado INT NOT NULL,
+	ID_Cliente INT NOT NULL,  -- Nueva columna para clientes
     Fecha DATETIME DEFAULT GETDATE() NOT NULL,
     Hora TIME NOT NULL,
     Subtotal DECIMAL(8,2) NOT NULL,
     Total DECIMAL(8, 2) NOT NULL,
     EsPedidosYa BIT NULL,
-    CONSTRAINT FK_Ventas_Empleados FOREIGN KEY (ID_Empleado) REFERENCES Empleados(ID_Empleado)
+    CONSTRAINT FK_Ventas_Empleados FOREIGN KEY (ID_Empleado) REFERENCES Empleados(ID_Empleado),
+	CONSTRAINT FK_Ventas_Clientes FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID_Cliente) 
 );
 
 CREATE TABLE DetallesVentas (
@@ -73,7 +86,8 @@ CREATE TABLE HistorialPrecios(
     Fecha_Cambio DATE DEFAULT GETDATE(),
     CONSTRAINT FK_HistorialPrecios_Articulos FOREIGN KEY (ID_Articulo) REFERENCES Articulos(ID_Articulo)
 );
-GO 
+GO
+
 
 CREATE PROCEDURE CambiarPrecioArticulo
     @ID_Articulo INT,
