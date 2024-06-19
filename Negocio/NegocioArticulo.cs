@@ -8,7 +8,7 @@ using Clases;
 
 namespace Negocio
 {
-    class NegocioArticulo
+    public class NegocioArticulo
     {
         public List<Articulo> listar()
         {
@@ -25,23 +25,19 @@ namespace Negocio
                     Articulo aux = new Articulo();
                     aux.id = datosArticulo.Lector.GetInt32(0);
                     aux.stock = datosArticulo.Lector.GetInt32(1);
-                    aux.precio = datosArticulo.Lector.GetFloat(2);
-                   /// aux.imagenes = (string)datosArticulo.Lector["Descripcion"];
-                    aux.marca = new Marca { nombre = (string)datosArticulo.Lector["Marca"], id = datosArticulo.Lector.GetInt32(2) };
-                    string categoria = string.Empty;
+                    aux.nombre = datosArticulo.Lector.GetString(2);
+                    aux.precio = (float)datosArticulo.Lector.GetDecimal(3); 
+                    aux.marca = new Marca { nombre = datosArticulo.Lector.GetString(4), id = datosArticulo.Lector.GetInt32(0) }; // Ajustar el índice según los campos correctos
+
                     if (!datosArticulo.Lector.IsDBNull(datosArticulo.Lector.GetOrdinal("Categoria")))
                     {
-                      
-                        aux.categoria = new Categoria { nombre = (string)datosArticulo.Lector["Categoria"], id = datosArticulo.Lector.GetInt32(8) };
-                      }
+                        aux.categoria = new Categoria { nombre = datosArticulo.Lector.GetString(5), id = datosArticulo.Lector.GetInt32(0) }; // Ajustar el índice según los campos correctos
+                    }
                     else
                     {
-                        categoria = "Sin categoría";
-                        aux.categoria = new Categoria { nombre = categoria };
+                        aux.categoria = new Categoria { nombre = "Sin categoría" };
                     }
 
-                    aux.precio = (float)datosArticulo.Lector.GetDecimal(6);
-                    aux.imagenes = GetImagenes(aux.id); 
                     lista.Add(aux);
                 }
 

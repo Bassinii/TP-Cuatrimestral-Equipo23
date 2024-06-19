@@ -10,6 +10,7 @@ namespace Clases
     {
         public int id { get; set; }
         public int stock { get; set; }
+        public string nombre { get; set; }
         public float precio { get; set; }
         public List<Imagen> imagenes { get; set; }
         public Marca marca { get; set; } = new Marca();   

@@ -4,3 +4,9 @@ C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equi
 C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
 C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.dll
 C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.pdb
+C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Clases\bin\Debug\Clases.dll
+C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Clases\bin\Debug\Clases.pdb
+C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.dll
+C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.pdb
