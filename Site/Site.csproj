@@ -101,6 +101,7 @@
     <Content Include="EditarCategoria.aspx" />
     <Content Include="EditarCliente.aspx" />
     <Content Include="EditarMarca.aspx" />
+    <Content Include="Articulos.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Marcas.aspx" />
     <Content Include="packages.config" />
@@ -165,6 +166,13 @@
     </Compile>
     <Compile Include="EditarMarca.aspx.designer.cs">
       <DependentUpon>EditarMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos.aspx.cs">
+      <DependentUpon>Articulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articulos.aspx.designer.cs">
+      <DependentUpon>Articulos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

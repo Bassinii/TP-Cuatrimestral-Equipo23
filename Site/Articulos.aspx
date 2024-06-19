@@ -1,46 +1,34 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Articulos.aspx.cs" Inherits="Site.Articulos" %>
+﻿<%@ Page Title="Gestion de Articulos" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Articulos.aspx.cs" Inherits="Site.Formulario_web11" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Gestión de Artículos</title>
-</head>
-<body>
-    <h1>Gestión de Artículos</h1>
-    <form id="form1" runat="server">
-        <!--Ver articulos -->
-        <div>
-             <h2>Artículos Existentes</h2>
-             <p>se muestra una grilla con los articulos existentes</p>
-
-            
-        </div>
-        <!--Modificar y Agregar Articulos -->
-        <div>
-            <h2><asp:Label ID="LblTituloFormulario" runat="server" Text="Agregar Nuevo Artículo"></asp:Label></h2>
-            <asp:HiddenField ID="HiddenFieldIDArticulo" runat="server" />
-            <label>Nombre</label>
-            <asp:TextBox ID="TextBoxNombre" runat="server"></asp:TextBox>
-            <br />
-            <label>Stock</label>
-            <asp:TextBox ID="TextBoxStock" runat="server"></asp:TextBox>
-            <br />
-            <label>Precio Unitario</label>
-            <asp:TextBox ID="TextBoxPrecioUnitario" runat="server"></asp:TextBox>
-            <br />
-            <label>Categoría</label>
-            <asp:DropDownList ID="DropDownListCategoria" runat="server"></asp:DropDownList>
-            <br />
-            <label>Marca</label>
-            <asp:DropDownList ID="DropDownListMarca" runat="server"></asp:DropDownList>
-            <br />
-            <asp:Button ID="BtnGuardar" runat="server" Text="Guardar" />
-            <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" Visible="True" />
-        </div>
-    </form>
-    <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
-</body>
-</html>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Content/Styles.css" rel="stylesheet" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="div-articulos">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%foreach (Clases.Articulo articulo in ListArticulos)
+                    { %>
+                <tr>
+                    <th scope="row"><%= articulo.id %></th>
+                    <td><%= articulo.nombre %></td>
+                    <td><%= articulo.stock %></td>
+                    <td><%= articulo.precio %></td>
+                    <td><%= articulo.marca.nombre %></td>
+                    <td><%= articulo.categoria.nombre %></td>
+                </tr>
+                <%} %>
+            </tbody>
+        </table>
+    </div>
+</asp:Content>

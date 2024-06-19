@@ -17,7 +17,7 @@
 .card {
     border: none;
     border-radius: 0 !important; /* Uso de !important si los estilos heredados causan problemas */
-    overflow: hidden;
+    overflow: visible;
     transition: transform 0.3s ease;
     position: relative;
 }
@@ -50,4 +50,9 @@
     width: 100%;
     padding: 5px 0;
     box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del elemento */
+}
+
+/*PAGINA ARTICULOS*/
+.div-articulos{
+    margin-top: 56px;
 }
