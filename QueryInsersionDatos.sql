@@ -59,6 +59,14 @@ INSERT INTO Clientes (Nombre, Apellido, Direccion, Mail, Telefono) VALUES
 ('Ana', 'Pérez', '1010 Plaza Mayor', 'ana.perez@example.com', '374829102'),
 ('Jose', 'Fernández', '1111 Gran Vía', 'jose.fernandez@example.com', '938475610');
 
+-- Inserción de datos en la tabla Proveedores
+INSERT INTO Proveedores(Direccion, Provincia, Mail, Telefono) VALUES 
+('456 Calle Arroyo', 'Cordoba', 'benito.fernandez@example.com', '2215894512'),
+('123 Avenida Rivadavia','Buenos Aires', 'pedro.moscuzza@example.com', '2246789521'),
+('567 Camino Principal','Mendoza', 'mateo.dicarlo@example.com', '2248451256'),
+('765 General Mayor', 'Santa Fe', 'jose.leon.suarez@example.com', '2272564512'),
+('657 Antonio Vespucio', 'Buenos Aires', 'jose.sito@example.com', '2234562356');
+
 -- Inserción de datos en la tabla Ventas
 INSERT INTO Ventas (ID_Empleado, ID_Cliente, Fecha, Hora, Subtotal, Total, EsPedidosYa) VALUES 
 (1, 1, GETDATE(), '10:00:00', 4990.00, 4990.00, 0),

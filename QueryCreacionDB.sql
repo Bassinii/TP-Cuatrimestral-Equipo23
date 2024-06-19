@@ -53,6 +53,14 @@ CREATE TABLE Clientes (
     Telefono VARCHAR(20) NOT NULL
 );
 
+CREATE TABLE Proveedores (
+    ID_Proveedor INT IDENTITY(1,1) PRIMARY KEY,
+    Direccion VARCHAR(50) NOT NULL,
+    Provincia VARCHAR(50) NOT NULL,
+    Mail VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(20) NOT NULL
+);
+
 
 CREATE TABLE Ventas (
     ID_Venta INT IDENTITY(1,1) PRIMARY KEY,
