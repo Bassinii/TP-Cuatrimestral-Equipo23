@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Clases;
+using Negocio;
 
 namespace Site
 {
@@ -11,7 +13,20 @@ namespace Site
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (!IsPostBack)
+                {
+                    CargarClientes();
+                }
+            }
+        }
+        private void CargarClientes()
+        {
+            NegocioCliente negocioCli = new NegocioCliente();
+            List<Cliente> ListCli = negocioCli.listar();
 
         }
+    
     }
 }

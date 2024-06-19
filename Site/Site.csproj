@@ -96,8 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Categorias.aspx" />
+    <Content Include="Clientes.aspx" />
     <Content Include="Content\Styles.css" />
     <Content Include="EditarCategoria.aspx" />
+    <Content Include="EditarCliente.aspx" />
     <Content Include="EditarMarca.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Marcas.aspx" />
@@ -129,6 +131,13 @@
     <Compile Include="Categorias.aspx.designer.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,6 +151,13 @@
     </Compile>
     <Compile Include="EditarCategoria.aspx.designer.cs">
       <DependentUpon>EditarCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCliente.aspx.cs">
+      <DependentUpon>EditarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarCliente.aspx.designer.cs">
+      <DependentUpon>EditarCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditarMarca.aspx.cs">
       <DependentUpon>EditarMarca.aspx</DependentUpon>
