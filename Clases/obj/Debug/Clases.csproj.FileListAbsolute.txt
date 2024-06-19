@@ -1,0 +1,6 @@
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\bin\Debug\Clases.dll
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\bin\Debug\Clases.pdb
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.dll
+C:\Users\Fran Dani y Epi\Desktop\cuatrimestral prog\18-06A\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.pdb
