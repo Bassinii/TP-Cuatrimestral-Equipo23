@@ -13,6 +13,6 @@ namespace Clases
         public string direccion { get; set; }
         public string provincia { get; set; }
         public string email { get; set; }
-        public int telefono { get; set; }
+        public string telefono { get; set; }
     }
 }

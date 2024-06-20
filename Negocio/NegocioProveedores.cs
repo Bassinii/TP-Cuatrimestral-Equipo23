@@ -8,7 +8,7 @@ using Clases;
 
 namespace Negocio
 {
-    class NegocioProveedores
+    public class NegocioProveedores
     {
         public List<Proveedores> listar()
         {
@@ -26,7 +26,7 @@ namespace Negocio
                     proveedor.direccion = datosProveedores.Lector["Direccion"].ToString();
                     proveedor.provincia = datosProveedores.Lector["Provincia"].ToString();
                     proveedor.email = datosProveedores.Lector["Mail"].ToString();
-                    proveedor.telefono = datosProveedores.Lector.GetInt32(4);
+                    proveedor.telefono = datosProveedores.Lector["Telefono"].ToString();
                     lista.Add(proveedor);
 
                 }
@@ -73,7 +73,7 @@ namespace Negocio
                     proveedor.direccion = datosProveedores.Lector["Direccion"].ToString();
                     proveedor.provincia = datosProveedores.Lector["Provincia"].ToString();
                     proveedor.email = datosProveedores.Lector["Mail"].ToString();
-                    proveedor.telefono = datosProveedores.Lector.GetInt32(4);
+                    proveedor.telefono = datosProveedores.Lector["Telefono"].ToString();
                     return proveedor;
                 }
                 else
