@@ -51,9 +51,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="Categorias.aspx">Gestión de Categorias</a>
                         </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="Clientes.aspx">Gestión de Clientes</a>
-                        </li>
                     </ul>
                 </div>
             </div>

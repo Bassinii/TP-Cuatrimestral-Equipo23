@@ -27,31 +27,6 @@ namespace Site
             List<Cliente> ListCli = negocioCli.listar();
 
         }
-
-        protected void filtrarClientes(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            string nombre = TextFiltro.Text;
-            if (nombre.Length == 0)
-            {
-                return;
-            }
-            Session.Add("nombreFiltro", TextFiltro.Text);
-            Response.Redirect("Clientes.aspx");
-
-        }
-
-        protected void BtnEliminarFilt_Click(object sender, EventArgs e)
-        {
-            if (Session["nombreFiltro"] != null)
-            {
-                Session.Remove("nombreFiltro");
-                Response.Redirect("Clientes.aspx");
-            }
-        }
+    
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -46,25 +45,17 @@ namespace Site
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            //lblError.Visible = false; // ocultamos si es correcta la validacion
-            Page.Validate();
-            if (!Page.IsValid)
-                return;
-
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             string direccion = txtDireccion.Text;
             string mail = txtMail.Text;
             string telefono = txtTelefono.Text;
 
-            /*if (!Validacion.validaTextoVacio(nombre) || !Validacion.validaTextoVacio(apellido) || !Validacion.validaTextoVacio(direccion) || !Validacion.validaTextoVacio(mail) || !Validacion.validaTextoVacio(telefono))
-             {
-                 // Manejar caso en el que alguno de los campos está vacío
-                 lblError.Text = "Todos los campos son obligatorios.";
-                 lblError.Visible = true;               
-                 return;
-
-             }*/
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(direccion) || string.IsNullOrEmpty(mail) || string.IsNullOrEmpty(telefono))
+            {
+                // Manejar caso en el que alguno de los campos está vacío
+                return;
+            }
 
             NegocioCliente negocioCliente = new NegocioCliente();
 
@@ -104,17 +95,13 @@ namespace Site
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex.Message);
-
                 // Manejar la excepción mostrando un mensaje o registrándola
-                //throw ex;
+                throw ex;
             }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
-
             if (Request.QueryString["id"] != null)
             {
                 string idCliente = Request.QueryString["id"];
