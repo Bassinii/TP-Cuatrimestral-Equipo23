@@ -97,16 +97,16 @@ namespace Negocio
             AccesoDatos datosProveedores = new AccesoDatos();
             try
             {
-                datosProveedores.setearConsulta("INSERT INTO Proveedores (Direccion, Provincia, Mail, Telefono) VALUES (@direccion, @provincia, @mail, @telefono)");
+                datosProveedores.setearConsulta("UPDATE Proveedores SET Direccion = @direccion, Provincia = @provincia, Mail = @mail, Telefono = @telefono WHERE ID_Proveedor = @id");
                 datosProveedores.setearParametro("@direccion", actualProveedor.direccion);
                 datosProveedores.setearParametro("@provincia", actualProveedor.provincia);
                 datosProveedores.setearParametro("@mail", actualProveedor.email);
                 datosProveedores.setearParametro("@telefono", actualProveedor.telefono);
+                datosProveedores.setearParametro("@id", actualProveedor.id);
                 datosProveedores.ejecutarAccion();
             }
             catch (Exception ex)
             {
-                // MessageBox.Show(ex.ToString());
                 throw ex;
             }
             finally
@@ -120,7 +120,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("DELETE FROM Marcas WHERE ID_Proveedor = @id");
+                datos.setearConsulta("DELETE FROM Proveedores WHERE ID_Proveedor = @id");
                 datos.setearParametro("@id", idProveedor);
                 datos.ejecutarAccion();
             }
