@@ -1,34 +1,41 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Clientes.aspx.cs" Inherits="Site.Clientes" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Clientes.aspx.cs" Inherits="Site.Clientes" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+ <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Gestión de Clientes</title>
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
         <style>
         .btn-primary {
-            background-color: #28a745; /* Verde Bootstrap */
-            border-color: #28a745; /* Verde Bootstrap */
+            background-color: #28a745; 
+            border-color: #28a745;
         }
         .btn-primary:hover {
-            background-color: #218838; /* Verde más oscuro para el hover */
-            border-color: #1e7e34; /* Verde más oscuro para el hover */
+            background-color: #218838;
+            border-color: #1e7e34; 
         }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+        .container {
+            margin-top: 100px; /* Ajustar espacio superior para navbar fija */
+        }
+        </style>
+    </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+     <div class="container">
 
             <h1>Gestión de Clientes</h1>
                 <!-- Filtro y botón para agregar nuevo cliente -->
             <div class="mb-3 row">
                 <div class="col-md-6">
-                    <input type="text" id="txtFiltro" class="form-control" placeholder="Buscar cliente..."/>
+                    <!--<input type="text" id="txtFiltro" class="form-control" placeholder="Buscar cliente por nombre..."/>-->
+                <asp:TextBox ID="TextFiltro" class="form-control"  placeholder="Buscar cliente por nombre..." runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-primary" onclick="filtrarClientes()">Filtrar</button>
+                   <!--<button type="button" class="btn btn-primary" onclick="filtrarClientes()" runat="server" >Filtrar </button>-->
+                    <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Filtrar" OnClick="Button1_Click" />
+                     <asp:Button ID="BtnEliminarFilt" class="btn btn-danger" runat="server" Text="Eliminar filtro" OnClick="BtnEliminarFilt_Click" />
                 </div>
                 <div class="col-md-4">
                     <a href="EditarCliente.aspx" class="btn btn-success"> + Nuevo</a>
@@ -39,7 +46,16 @@
             
             <%
                 Negocio.NegocioCliente negocioCli = new Negocio.NegocioCliente();
-                List<Clases.Cliente> ListCli = negocioCli.listar();
+                List<Clases.Cliente> ListCli;
+                if (Session["nombreFiltro"] != null)
+                {
+                    ListCli = negocioCli.listarPorNombre(Session["nombreFiltro"].ToString());
+                }
+                else
+                {
+                  ListCli = negocioCli.listar();
+
+                }
             %>
             <table class="table table-success table-striped table-hover">
               <thead>
@@ -78,19 +94,17 @@
             </table>
              </div>
             
-
-            <!-- Agregar cliente -->
            
         <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
-    </form>
-    </body>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script>
-        // Script para manejar la selección de filas en la tabla
-        $(document).ready(function () {
-            $('#tablaMarcas tbody').on('click', 'tr', function () {
-                $(this).toggleClass('table-active'); // Aplicar clase de selección cuando se hace clic en una fila
+            // Script para manejar la selección de filas en la tabla
+            $(document).ready(function () {
+                $('#tablaMarcas tbody').on('click', 'tr', function () {
+                    $(this).toggleClass('table-active'); // Aplicar clase de selección cuando se hace clic en una fila
+                });
             });
-        });
 </script>
-</html>
+</asp:Content>
