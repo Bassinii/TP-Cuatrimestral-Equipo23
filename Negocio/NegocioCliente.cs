@@ -140,5 +140,37 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+        public List<Cliente> listarPorNombre(string nombre)
+        {
+            List<Cliente> lista = new List<Cliente>();
+            AccesoDatos datosCliente = new AccesoDatos();
+            try
+            {
+                datosCliente.setearConsulta($"SELECT * FROM Clientes where Nombre LIKE '{nombre}%'");
+                datosCliente.ejecutarLectura();
+
+                while (datosCliente.Lector.Read())
+                {
+                    Cliente cliente = new Cliente();
+                    cliente.id = datosCliente.Lector.GetInt32(0);
+                    cliente.nombre = datosCliente.Lector["Nombre"].ToString();
+                    cliente.apellido = datosCliente.Lector["Apellido"].ToString();
+                    cliente.direccion = datosCliente.Lector["Direccion"].ToString();
+                    cliente.mail = datosCliente.Lector["Mail"].ToString();
+                    cliente.telefono = datosCliente.Lector["Telefono"].ToString();
+                    lista.Add(cliente);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                datosCliente.CerrarConexion();
+            }
+        }
     }
 }
