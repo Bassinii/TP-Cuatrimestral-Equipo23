@@ -52,12 +52,12 @@ INSERT INTO Empleados (Nombre, Apellido, Legajo, Contrasenia) VALUES
 ('Sofía', 'Romero', 3242, 'password333');
 
 -- Inserción de datos en la tabla Clientes
-INSERT INTO Clientes (Nombre, Apellido, Direccion, Mail, Telefono) VALUES 
-('Daniela', 'Bentancor', '123 Calle Falsa', 'Daniela.Bent@example.com', '123456789'),
-('Bruno', 'Bassini', '456 Avenida Siempreviva', 'Bruno.Bas@example.com', '987654321'),
-('Sergio', 'Sánchez', '789 Camino Real', 'Sergio.San@example.com', '564738291'),
-('Ana', 'Pérez', '1010 Plaza Mayor', 'ana.perez@example.com', '374829102'),
-('Jose', 'Fernández', '1111 Gran Vía', 'jose.fernandez@example.com', '938475610');
+INSERT INTO Clientes (Nombre, Apellido, Direccion, Mail, Telefono, DNI) VALUES 
+('Daniela', 'Bentancor', '123 Calle Falsa', 'Daniela.Bent@example.com', '123456789', '12345678'),
+('Bruno', 'Bassini', '456 Avenida Siempreviva', 'Bruno.Bas@example.com', '987654321', '87654321'),
+('Sergio', 'Sánchez', '789 Camino Real', 'Sergio.San@example.com', '564738291', '11223344'),
+('Ana', 'Pérez', '1010 Plaza Mayor', 'ana.perez@example.com', '374829102', '55667788'),
+('Jose', 'Fernández', '1111 Gran Vía', 'jose.fernandez@example.com', '938475610', '99887766');
 
 -- Inserción de datos en la tabla Proveedores
 INSERT INTO Proveedores(Direccion, Provincia, Mail, Telefono) VALUES 

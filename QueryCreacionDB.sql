@@ -50,7 +50,8 @@ CREATE TABLE Clientes (
     Apellido VARCHAR(50) NOT NULL,
     Direccion VARCHAR(100) NOT NULL,
     Mail VARCHAR(100) NOT NULL,
-    Telefono VARCHAR(20) NOT NULL
+    Telefono VARCHAR(20) NOT NULL,
+	DNI VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE Proveedores (
@@ -96,6 +97,10 @@ CREATE TABLE HistorialPrecios(
 );
 GO
 
+-- Crear un índice único en la columna DNI de la tabla Clientes para evitar duplicados
+CREATE UNIQUE INDEX IX_Clientes_DNI
+ON Clientes (DNI);
+GO
 
 CREATE PROCEDURE CambiarPrecioArticulo
     @ID_Articulo INT,
