@@ -25,6 +25,7 @@ namespace Negocio
                     cliente.direccion = datosCliente.Lector["Direccion"].ToString();
                     cliente.mail = datosCliente.Lector["Mail"].ToString();
                     cliente.telefono = datosCliente.Lector["Telefono"].ToString();
+                    cliente.dni = datosCliente.Lector["DNI"].ToString(); // Leer DNI
                     lista.Add(cliente);
                 }
                 return lista;
@@ -44,12 +45,13 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO Clientes (Nombre, Apellido, Direccion, Mail, Telefono) VALUES (@nombre, @apellido, @direccion, @mail, @telefono)");
+                datos.setearConsulta("INSERT INTO Clientes (Nombre, Apellido, Direccion, Mail, Telefono, DNI) VALUES (@nombre, @apellido, @direccion, @mail, @telefono, @dni)");
                 datos.setearParametro("@nombre", nuevoCliente.nombre);
                 datos.setearParametro("@apellido", nuevoCliente.apellido);
                 datos.setearParametro("@direccion", nuevoCliente.direccion);
                 datos.setearParametro("@mail", nuevoCliente.mail);
                 datos.setearParametro("@telefono", nuevoCliente.telefono);
+                datos.setearParametro("@dni", nuevoCliente.dni);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -79,6 +81,7 @@ namespace Negocio
                     cliente.direccion = datos.Lector["Direccion"].ToString();
                     cliente.mail = datos.Lector["Mail"].ToString();
                     cliente.telefono = datos.Lector["Telefono"].ToString();
+                    cliente.dni = datos.Lector["DNI"].ToString(); // Leer DNI
                     return cliente;
                 }
                 else
@@ -101,12 +104,13 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("UPDATE Clientes SET Nombre = @nombre, Apellido = @apellido, Direccion = @direccion, Mail = @mail, Telefono = @telefono WHERE ID_Cliente = @id");
+                datos.setearConsulta("UPDATE Clientes SET Nombre = @nombre, Apellido = @apellido, Direccion = @direccion, Mail = @mail, Telefono = @telefono, DNI=@dni WHERE ID_Cliente = @id");
                 datos.setearParametro("@nombre", cliente.nombre);
                 datos.setearParametro("@apellido", cliente.apellido);
                 datos.setearParametro("@direccion", cliente.direccion);
                 datos.setearParametro("@mail", cliente.mail);
                 datos.setearParametro("@telefono", cliente.telefono);
+                datos.setearParametro("@dni", cliente.dni);
                 datos.setearParametro("@id", cliente.id);
                 datos.ejecutarAccion();
             }
@@ -158,6 +162,7 @@ namespace Negocio
                     cliente.direccion = datosCliente.Lector["Direccion"].ToString();
                     cliente.mail = datosCliente.Lector["Mail"].ToString();
                     cliente.telefono = datosCliente.Lector["Telefono"].ToString();
+                    cliente.dni = datosCliente.Lector["DNI"].ToString(); // Leer DNI
                     lista.Add(cliente);
                 }
                 return lista;
