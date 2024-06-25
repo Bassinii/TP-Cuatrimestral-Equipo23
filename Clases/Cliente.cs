@@ -14,5 +14,6 @@ namespace Clases
         public string direccion { get; set; }
         public string mail { get; set; }
         public string telefono { get; set; }
+        public string dni { get; set; } // Se agrega  DNI
     }
 }
