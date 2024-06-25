@@ -29,6 +29,9 @@
         <form id="form1" runat="server" class="w-50">
             <div class="container mt-4">
                 <h1><%= Request.QueryString["id"] != null ? "Editar Cliente" : "Agregar Cliente" %></h1>
+                <!-- Label para mostrar mensajes de error -->
+                <!--<asp:Label ID="Label1" runat="server" CssClass="text-danger" Visible="false"></asp:Label>-->
+
                 <div class="mb-3">
                     <label for="txtNombre" class="form-label">Nombre</label>
                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
@@ -62,6 +65,12 @@
                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ControlToValidate="txtTelefono" ErrorMessage="El Teléfono es requerido." runat="server" CssClass="text-danger" Display="Dynamic" />
                     <asp:RegularExpressionValidator ErrorMessage="Solo números (7 a 15 dígitos)." ControlToValidate="txtTelefono" ValidationExpression="^\d{7,15}$" CssClass="text-danger" runat="server" />
+                </div>
+                <div class="mb-3">
+                    <label for="txtDNI" class="form-label">DNI</label>
+                    <asp:TextBox ID="txtDNI" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtDNI" ErrorMessage="El DNI es requerido." runat="server" CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ErrorMessage="DNI debe contener entre 7 y 8 dígitos." ControlToValidate="txtDNI" ValidationExpression="^\d{7,8}$" CssClass="text-danger" runat="server" />
                 </div>
                 <asp:Label ID="lblError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
 

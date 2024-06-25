@@ -41,6 +41,7 @@ namespace Site
                 txtDireccion.Text = cliente.direccion;
                 txtMail.Text = cliente.mail;
                 txtTelefono.Text = cliente.telefono;
+                txtDNI.Text = cliente.dni; // Cargar DNI
             }
         }
 
@@ -56,6 +57,7 @@ namespace Site
             string direccion = txtDireccion.Text;
             string mail = txtMail.Text;
             string telefono = txtTelefono.Text;
+            string dni = txtDNI.Text; // Guardar DNI
 
             /*if (!Validacion.validaTextoVacio(nombre) || !Validacion.validaTextoVacio(apellido) || !Validacion.validaTextoVacio(direccion) || !Validacion.validaTextoVacio(mail) || !Validacion.validaTextoVacio(telefono))
              {
@@ -82,7 +84,9 @@ namespace Site
                             apellido = apellido,
                             direccion = direccion,
                             mail = mail,
-                            telefono = telefono
+                            telefono = telefono,
+                            dni = dni // Actualizar DNI
+
                         };
                         negocioCliente.actualizar(cliente);
                     }
@@ -95,12 +99,18 @@ namespace Site
                         apellido = apellido,
                         direccion = direccion,
                         mail = mail,
-                        telefono = telefono
+                        telefono = telefono,
+                        dni = dni // Guardar DNI
                     };
                     negocioCliente.agregar(nuevoCliente);
                 }
 
                 Response.Redirect("Clientes.aspx");
+            }
+            catch (SqlException ex) when (ex.Number == 2601) // Número de error para violación de índice único
+            {
+                lblError.Text = "El DNI ingresado ya se encuentra registrado.";
+                lblError.Visible = true;
             }
             catch (Exception ex)
             {

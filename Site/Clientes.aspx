@@ -63,6 +63,7 @@
                   <th scope="col">ID Cliente</th>
                   <th scope="col">NOMBRE </th>
                   <th scope="col">APELLIDO</th>
+                  <th scope="col">DNI</th>
                   <th scope="col">DIRECCION</th>
                   <th scope="col">MAIL</th>
                   <th scope="col">TELEFONO</th>
@@ -80,6 +81,7 @@
                   <td><%=objCli.id %></td>
                   <td><%=objCli.nombre %></td>
                   <td><%=objCli.apellido %></td>
+                  <td><%=objCli.dni %></td>
                   <td><%=objCli.direccion %></td>
                   <td><%=objCli.mail %></td>
                   <td><%=objCli.telefono %></td>
