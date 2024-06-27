@@ -7,10 +7,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="d-flex">
 
-        <div id="sidebar" class="bg-light p-3" style="width: 270px; position: fixed; top: 70px; /* ajusta según la altura de tu navbar */
+        <div id="sidebar" class="bg-light p-3" style="width: 270px; position: fixed; top: 9.5%; /* ajusta según la altura de tu navbar */
             left: 0; /* ajusta según la altura de tu navbar */
             overflow-y: auto; padding: 10px; box-sizing: border-box; background-color: #f8f9fa; /* color de fondo */
             z-index: 1000;">
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+            <h2>CARRITO</h2>
+
             <h2>CARRITO</h2>
         </div>
 
