@@ -64,3 +64,30 @@ C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral
 C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\vbc.exe
 C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\VBCSCompiler.exe
 C:\Users\Bruno\Desktop\UTN\Tercer Cuatrimestre\Programacion III\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\ApplicationInsights.config
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Site.dll.config
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Site.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Site.pdb
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Clases.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.Web.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Negocio.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Clases.pdb
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Negocio.pdb
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.Web.xml
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.csproj.AssemblyReference.cache
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.csproj.CoreCompileInputs.cache
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.csproj.CopyComplete
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.pdb
