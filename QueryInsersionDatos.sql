@@ -104,3 +104,11 @@ INSERT INTO HistorialPrecios (ID_Articulo, Precio_Anterior, Precio_Nuevo) VALUES
 (7, 4200.00, 4600.00),
 (8, 4200.00, 4600.00),
 (9, 4200.00, 4600.00);
+
+-- Inserción de datos en la tabla Usuarios
+INSERT INTO Usuarios (Usuario, NombreCompleto, Contrasenia, TipoUsuario, CorreoElectronico) VALUES 
+('Daniela', 'Daniela Bentancor', 'admin1', 1, 'Daniela.Bent@example.com'),
+('admin2', 'Administrador Dos', 'adminpass2', 1, 'admin2@example.com'),
+('ventas1', 'Vendedor Uno', 'ventaspas1', 2, 'ventas1@example.com'),
+('ventas2', 'Vendedor Dos', 'ventaspas2', 2, 'ventas2@example.com'),
+('ventas3', 'Vendedor Tres', 'ventaspas3', 2, 'ventas3@example.com');
