@@ -83,9 +83,5 @@ namespace Site
             negocioArticulo.actualizar(articulo);
         }
 
-        protected void DropDownModificarCategorias_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

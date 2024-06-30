@@ -95,6 +95,16 @@ CREATE TABLE HistorialPrecios(
     Fecha_Cambio DATE DEFAULT GETDATE(),
     CONSTRAINT FK_HistorialPrecios_Articulos FOREIGN KEY (ID_Articulo) REFERENCES Articulos(ID_Articulo)
 );
+
+-- Creación de la tabla Usuarios
+CREATE TABLE Usuarios (
+    ID_Usuario INT IDENTITY(1,1) PRIMARY KEY,
+    Usuario VARCHAR(50) NOT NULL,
+    NombreCompleto VARCHAR(100) NOT NULL,
+    Contrasenia VARCHAR(50) NOT NULL,
+    TipoUsuario INT NOT NULL, -- 1 para administrador, 2 para ventas
+    CorreoElectronico VARCHAR(100) NOT NULL
+);
 GO
 
 -- Crear un índice único en la columna DNI de la tabla Clientes para evitar duplicados

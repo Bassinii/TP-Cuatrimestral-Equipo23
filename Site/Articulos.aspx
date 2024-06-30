@@ -55,8 +55,9 @@
                                             data-marca="<%= articulo.marca.nombre %>"
                                             data-categoria="<%= articulo.categoria.nombre %>"
                                             onclick="llenarModalModificar(this)">Modificar</a>
+                                            <%int idCategoria = articulo.categoria.id; %>
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Eliminar</a></li>
+                                    <li><a class="dropdown-item" href="#" id="ButtonEliminar" data-bs-toggle="modal" data-bs-target="#eliminarModal">Eliminar</a></li>
                                 </ul>
                             </div>
                         </td>
@@ -132,12 +133,32 @@
                     </div>
                     <div class="mb-3">
                         <label for="articuloCategoria" class="form-label">Categoría</label>
-                        <asp:DropDownList ID="DropDownModificarCategorias" runat="server" CssClass="form-control" OnLoad="DropDownModificarCategorias_Load"></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownModificarCategorias" runat="server" CssClass="form-control"></asp:DropDownList>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <asp:Button Text="Modificar" CssClass="btn btn-primary" runat="server" ID="ButtonModificar" OnClick="ButtonModificar_Click" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Eliminar-->
+    <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="eliminarModalLabel">Eliminar articulo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Se está por eliminar </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
