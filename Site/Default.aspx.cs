@@ -17,5 +17,7 @@ namespace Site
             NegocioArticulo negocioArticulo = new NegocioArticulo();
             ListArticulos = negocioArticulo.listar();
         }
+
+
     }
 }

@@ -91,3 +91,15 @@ C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.csproj.Core
 C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.csproj.CopyComplete
 C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.dll
 C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\obj\Debug\Site.pdb
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\csc.exe
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\vbc.exe
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\VBCSCompiler.exe
+C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Site\bin\roslyn\VBCSCompiler.exe.config

@@ -97,7 +97,6 @@
   <ItemGroup>
     <Content Include="Categorias.aspx" />
     <Content Include="Clientes.aspx" />
-    <Content Include="Content\Styles.css" />
     <Content Include="EditarCategoria.aspx" />
     <Content Include="EditarCliente.aspx" />
     <Content Include="EditarMarca.aspx" />
@@ -225,6 +224,7 @@
     </Compile>
     <Compile Include="Ventas.aspx.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Ventas.aspx.designer.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>

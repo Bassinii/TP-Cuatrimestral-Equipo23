@@ -26,7 +26,7 @@
     <form id="form1" runat="server">
 
         <%--Navbar--%>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom" style="position:fixed">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom" style="position: fixed">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">HACHE Gestion</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,21 +53,22 @@
                             <a class="nav-link" href="Categorias.aspx">Gestión de Categorias</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="Clientes.aspx">Gestión de Clientes</a>
+                            <a class="nav-link" href="Clientes.aspx">Gestión de Clientes</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="ProveedoresGestion.aspx">Gestión de Proveedores</a>
+                            <a class="nav-link" href="ProveedoresGestion.aspx">Gestión de Proveedores</a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
         </nav>
         <%--end Navbar--%>
-        
+
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+<%-- Contador de horas: 12  --%>
