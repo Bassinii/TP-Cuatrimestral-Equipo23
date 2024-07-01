@@ -15,15 +15,6 @@ namespace Site
     {
 
         /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
         /// Control TextBoxUsuario.
         /// </summary>
         /// <remarks>
@@ -33,30 +24,21 @@ namespace Site
         protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
 
         /// <summary>
-        /// Control TextBoxContraseña.
+        /// Control TextBoxPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxContraseña;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
 
         /// <summary>
-        /// Control BtnEnviar.
+        /// Control BtnIngresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEnviar;
-
-        /// <summary>
-        /// Control LinkRegistrarse.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LinkRegistrarse;
+        protected global::System.Web.UI.WebControls.Button BtnIngresar;
     }
 }

@@ -102,6 +102,8 @@
     <Content Include="EditarMarca.aspx" />
     <Content Include="Articulos.aspx" />
     <Content Include="EditarProveedor.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="MenuLogin.aspx" />
     <Content Include="ProveedoresGestion.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Marcas.aspx" />
@@ -182,6 +184,18 @@
     </Compile>
     <Compile Include="EditarProveedor.aspx.designer.cs">
       <DependentUpon>EditarProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuLogin.aspx.cs">
+      <DependentUpon>MenuLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuLogin.aspx.designer.cs">
+      <DependentUpon>MenuLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProveedoresGestion.aspx.cs">
       <DependentUpon>ProveedoresGestion.aspx</DependentUpon>
