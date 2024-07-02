@@ -45,6 +45,7 @@ namespace Site
                 ulFin.Text = "</ul>";
 
                 navbar.Controls.Add(ulFin);
+
             }
             else // Si no hay usuario autenticado
             {
@@ -57,9 +58,6 @@ namespace Site
                 lcInicio.Text = "<li class='nav-item'><a class='nav-link' href='Default.aspx'>Inicio</a></li>";
                 navbar.Controls.Add(lcInicio);
 
-                LiteralControl lcLogin = new LiteralControl();
-                lcLogin.Text = "<li class='nav-item'><a class='nav-link' href='Login.aspx'>Usuario</a></li>";
-                navbar.Controls.Add(lcLogin);
 
                 LiteralControl ulFin = new LiteralControl();
                 ulFin.Text = "</ul>";
@@ -68,7 +66,11 @@ namespace Site
             }
 
         }
-
+        protected void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Session["usuario"] = null; // Eliminar la sesión del usuario
+            Response.Redirect("Default.aspx"); // Redirigir a la página de inicio u otra página después de cerrar sesión
+        }
 
         private string ObtenerNombreVista(string vista)
         {
@@ -76,8 +78,6 @@ namespace Site
             {
                 case "Default.aspx":
                     return "Inicio";
-                case "Login.aspx":
-                    return "Usuario";
                 case "Ventas.aspx":
                     return "Historial de ventas";
                 case "Articulos.aspx":
