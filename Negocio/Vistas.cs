@@ -17,7 +17,7 @@ namespace Negocio
             if(usuario == null)
             {
                 vistasDisponibles.Add("Default.aspx");
-                vistasDisponibles.Add("Login.aspx");
+                //vistasDisponibles.Add("Login.aspx");
                 return vistasDisponibles;
             }
 
