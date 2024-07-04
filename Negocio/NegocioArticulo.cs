@@ -187,6 +187,44 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+        public List<Articulo> listarPorNombre(string nombre)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datosArticulo = new AccesoDatos();
+            try
+            {
+                datosArticulo.setearConsulta($"SELECT A.ID_Articulo, A.Stock, A.Nombre, A.Precio_Unitario, M.Nombre AS Marca, C.Nombre AS Categoria " +
+                                             $"FROM ARTICULOS A " +
+                                             $"LEFT JOIN Categorias C ON A.ID_Categoria = C.ID_Categoria " +
+                                             $"LEFT JOIN Marcas M ON A.ID_Marca = M.ID_Marca " +
+                                             $"WHERE A.Nombre LIKE '{nombre}%'");
+                datosArticulo.ejecutarLectura();
+
+                while (datosArticulo.Lector.Read())
+                {
+                    Articulo articulo = new Articulo();
+                    articulo.id = datosArticulo.Lector.GetInt32(0);
+                    articulo.stock = datosArticulo.Lector.GetInt32(1);
+                    articulo.nombre = datosArticulo.Lector.GetString(2);
+                    articulo.precio = (float)datosArticulo.Lector.GetDecimal(3);
+
+                    articulo.marca = new Marca { nombre = datosArticulo.Lector.GetString(4) };
+                    articulo.categoria = new Categoria { nombre = datosArticulo.Lector.GetString(5) };
+
+                    lista.Add(articulo);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                datosArticulo.CerrarConexion();
+            }
+        }
     }
 
 
