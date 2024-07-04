@@ -121,7 +121,7 @@
         </div>
     </div>
 
-    <script>
+    <%--<script>
         function addToCart(name, price, image) {
             // Crear un nuevo elemento div para la tarjeta del carrito
             var cartItem = document.createElement('div');
@@ -139,5 +139,5 @@
 
 
         }
-    </script>
+    </script>--%>
 </asp:Content>
