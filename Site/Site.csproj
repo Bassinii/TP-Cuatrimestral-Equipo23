@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="Categorias.aspx" />
     <Content Include="Clientes.aspx" />
+    <Content Include="EditarArticulo.aspx" />
     <Content Include="EditarCategoria.aspx" />
     <Content Include="EditarCliente.aspx" />
     <Content Include="EditarMarca.aspx" />
@@ -150,6 +151,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditarArticulo.aspx.cs">
+      <DependentUpon>EditarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarArticulo.aspx.designer.cs">
+      <DependentUpon>EditarArticulo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditarCategoria.aspx.cs">
       <DependentUpon>EditarCategoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,12 +195,14 @@
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuLogin.aspx.cs">
       <DependentUpon>MenuLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MenuLogin.aspx.designer.cs">
       <DependentUpon>MenuLogin.aspx</DependentUpon>

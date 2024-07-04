@@ -24,9 +24,9 @@
         <div>
             <h3>Ingresaste Correctamente.</h3>
             
-            <!-- Aquí puedes agregar los enlaces a las páginas específicas para cada tipo de usuario -->
+           
             <asp:HyperLink ID="LinkCategorias" runat="server" NavigateUrl="Categorias.aspx">Gestión de Categorías</asp:HyperLink>
-            <!-- Agrega más enlaces según sea necesario -->
+            
         </div>
     </div>
 </asp:Content>

@@ -83,7 +83,7 @@
                     <% if (Session["usuario"] == null) { %>
                         <a class="nav-link btn-custom" href="Login.aspx">Usuario</a> <!-- Botón Usuario -->
                     <% } else { %>
-                        <asp:Button Text="Salir" ID="btnSalir" CssClass="btn-outline-green me-2" runat="server" OnClick="BtnSalir_Click" />
+                        <asp:Button Text="Salir" ID="btnSalir" CssClass="btn-outline-green me-2" runat="server" OnClick="BtnSalir_Click" UseSubmitBehavior="false" />
                     <% } %>
                 </div>
             </div>
