@@ -19,14 +19,12 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="content-container">
-        <h1>Menu De Usuario</h1>
-        <div>
-            <h3>Ingresaste Correctamente.</h3>
-            
-           
-            <asp:HyperLink ID="LinkUsuarios" runat="server" NavigateUrl="VentanaUsuarios.aspx">Ir a gestionar usuarios</asp:HyperLink>
-            
+    <div class="d-flex justify-content-center align-items-start" style="height: 100vh; padding-top: 100px;">
+        <div class="alert alert-success text-center" role="alert" style="width: 600px; border: 1px solid #d4edda; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <h4 class="alert-heading">BIENVENIDX!</h4>
+            <p>Logueado con éxito.</p>
+            <hr>
+            <p class="mb-0">Selecciona una opción en el menú superior para realizar tareas de gestión.</p>
         </div>
     </div>
 </asp:Content>

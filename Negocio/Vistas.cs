@@ -31,6 +31,7 @@ namespace Negocio
                 vistasDisponibles.Add("Categorias.aspx");
                 vistasDisponibles.Add("Clientes.aspx");
                 vistasDisponibles.Add("ProveedoresGestion.aspx");
+                vistasDisponibles.Add("VentanaUsuarios.aspx");
             }
             else if (usuario.TipoUsuario == TipoUsuario.VENTAS)// VENTAS
             {

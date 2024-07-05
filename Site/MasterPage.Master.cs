@@ -90,6 +90,8 @@ namespace Site
                     return "Gestión de Clientes";
                 case "ProveedoresGestion.aspx":
                     return "Gestión de Proveedores";
+                case "VentanaUsuarios.aspx":
+                    return "Gestión de Usuarios";
                 default:
                     return "Vista Desconocida";
             }
