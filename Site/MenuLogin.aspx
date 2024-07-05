@@ -25,7 +25,7 @@
             <h3>Ingresaste Correctamente.</h3>
             
            
-            <asp:HyperLink ID="LinkCategorias" runat="server" NavigateUrl="Categorias.aspx">Gestión de Categorías</asp:HyperLink>
+            <asp:HyperLink ID="LinkUsuarios" runat="server" NavigateUrl="VentanaUsuarios.aspx">Ir a gestionar usuarios</asp:HyperLink>
             
         </div>
     </div>

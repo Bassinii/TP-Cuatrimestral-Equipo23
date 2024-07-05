@@ -103,6 +103,7 @@
     <Content Include="EditarMarca.aspx" />
     <Content Include="Articulos.aspx" />
     <Content Include="EditarProveedor.aspx" />
+    <Content Include="EditarUsuario.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="MenuLogin.aspx" />
     <Content Include="ProveedoresGestion.aspx" />
@@ -126,6 +127,7 @@
     <Content Include="register.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="VentanaUsuarios.aspx" />
     <Content Include="Ventas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -193,6 +195,13 @@
     <Compile Include="EditarProveedor.aspx.designer.cs">
       <DependentUpon>EditarProveedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +254,13 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaUsuarios.aspx.cs">
+      <DependentUpon>VentanaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VentanaUsuarios.aspx.designer.cs">
+      <DependentUpon>VentanaUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ventas.aspx.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
