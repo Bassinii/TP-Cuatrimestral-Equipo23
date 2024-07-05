@@ -51,6 +51,12 @@
                     <asp:RequiredFieldValidator ErrorMessage="Seleccione un Tipo de Usuario." ControlToValidate="ddlTipoUsuario" runat="server" CssClass="text-danger" InitialValue="0"></asp:RequiredFieldValidator>
                 </div>
                 <div class="mb-3">
+                    <label for="txtContrasenia" class="form-label">Contraseña</label>
+                    <asp:TextBox ID="txtContrasenia" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ErrorMessage="La Contraseña es requerida." ControlToValidate="txtContrasenia" runat="server" CssClass="text-danger" Display="Dynamic" />
+                </div>
+
+                <div class="mb-3">
                     <label for="txtCorreoElectronico" class="form-label">Correo Electrónico</label>
                     <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ErrorMessage="El Correo Electrónico es requerido." ControlToValidate="txtCorreoElectronico" runat="server" CssClass="text-danger" Display="Dynamic" />

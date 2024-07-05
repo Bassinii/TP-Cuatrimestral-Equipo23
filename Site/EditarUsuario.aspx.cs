@@ -46,6 +46,7 @@ namespace Site
                 txtUsuario.Text = usuario.UsuarioNombre;
                 txtNombreCompleto.Text = usuario.NombreCompleto;
                 txtCorreoElectronico.Text = usuario.CorreoElectronico;
+                txtContrasenia.Text = usuario.Contrasenia;
                 ddlTipoUsuario.SelectedValue = usuario.TipoUsuario.ToString();
                 // La contraseña generalmente no se muestra en la edición
             }
@@ -62,6 +63,7 @@ namespace Site
             string nombreCompleto = txtNombreCompleto.Text;
             TipoUsuario tipoUsuario = (TipoUsuario)Convert.ToInt32(ddlTipoUsuario.SelectedValue);
             string correoElectronico = txtCorreoElectronico.Text;
+            string contrasenia = txtContrasenia.Text; // Obtener la nueva contraseña
 
             NegocioUsuario negocioUsuario = new NegocioUsuario();
 
@@ -78,25 +80,26 @@ namespace Site
                             UsuarioNombre = usuario,
                             NombreCompleto = nombreCompleto,
                             TipoUsuario = tipoUsuario,
-                            CorreoElectronico = correoElectronico
+                            CorreoElectronico = correoElectronico,
+                            Contrasenia = contrasenia // Asignar la nueva contraseña
                         };
                         negocioUsuario.Actualizar(user);
                     }
-
-                    else
-                    {
-                        Usuario newUser = new Usuario
-                        {
-                            UsuarioNombre = usuario,
-                            NombreCompleto = nombreCompleto,
-                            TipoUsuario = tipoUsuario,
-                            CorreoElectronico = correoElectronico
-                        };
-                        negocioUsuario.Agregar(newUser);
-                    }
-
-                    Response.Redirect("VentanaUsuarios.aspx");
                 }
+                else
+                {
+                    Usuario newUser = new Usuario
+                    {
+                        UsuarioNombre = usuario,
+                        NombreCompleto = nombreCompleto,
+                        TipoUsuario = tipoUsuario,
+                        CorreoElectronico = correoElectronico,
+                        Contrasenia = contrasenia // Asignar la contraseña al crear nuevo usuario
+                    };
+                    negocioUsuario.Agregar(newUser);
+                }
+
+                Response.Redirect("VentanaUsuarios.aspx");
             }
             catch (SqlException ex) when (ex.Number == 2601) // Número de error para violación de índice único
             {
@@ -109,8 +112,8 @@ namespace Site
                 // Manejar la excepción mostrando un mensaje o registrándola
                 //throw ex;
             }
-
         }
+
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

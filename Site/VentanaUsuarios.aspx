@@ -59,7 +59,7 @@
         </div>
 
         <!-- Button to add new user -->
-        <a href="EditarUsuarios.aspx" class="btn btn-success">Agregar Usuario</a>
+        <a href="EditarUsuario.aspx" class="btn btn-success">Agregar Usuario</a>
         <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
     </div>
 </asp:Content>
