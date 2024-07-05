@@ -46,7 +46,7 @@ namespace Site
                 txtUsuario.Text = usuario.UsuarioNombre;
                 txtNombreCompleto.Text = usuario.NombreCompleto;
                 txtCorreoElectronico.Text = usuario.CorreoElectronico;
-                txtContrasenia.Text = usuario.Contrasenia;
+                txtContrasenia.Attributes["value"] = usuario.Contrasenia; // Asignar valor a la contraseña
                 ddlTipoUsuario.SelectedValue = usuario.TipoUsuario.ToString();
                 // La contraseña generalmente no se muestra en la edición
             }
