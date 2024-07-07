@@ -66,6 +66,38 @@ namespace Negocio
                 throw ex;
             }
         }
+        public List<Usuario> listarPorNombre(string nombre)
+        {
+            List<Usuario> lista = new List<Usuario>();
+            AccesoDatos datosUsuarios = new AccesoDatos();
+            try
+            {
+                datosUsuarios.setearConsulta($"SELECT * FROM Usuarios where NombreCompleto LIKE '{nombre}%'");
+                datosUsuarios.ejecutarLectura();
+
+                while (datosUsuarios.Lector.Read())
+                {
+                    Usuario usuario = new Usuario();
+                    usuario.ID_Usuario = datosUsuarios.Lector.GetInt32(0);
+                    usuario.UsuarioNombre = datosUsuarios.Lector["Usuario"].ToString();
+                    usuario.NombreCompleto = datosUsuarios.Lector["NombreCompleto"].ToString();
+                    usuario.TipoUsuario = (TipoUsuario)datosUsuarios.Lector.GetInt32(datosUsuarios.Lector.GetOrdinal("TipoUsuario"));
+                    usuario.CorreoElectronico = datosUsuarios.Lector["CorreoElectronico"].ToString();
+                    lista.Add(usuario);
+                    
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                datosUsuarios.CerrarConexion();
+            }
+        }
 
         public void Agregar(Usuario nuevoUsuario)
         {

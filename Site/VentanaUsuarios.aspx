@@ -19,14 +19,39 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="content-container">
+    
         <h1>Gestión de Usuarios</h1>
+        
+        <div class="mb-3 row">
+
+                <div class="col-md-6">
+                <asp:TextBox ID="TextFiltro" class="form-control"  placeholder="Buscar usuario por nombre completo..." runat="server"></asp:TextBox>
+                </div>
+                <div class="col-md-2">
+                    <asp:Button ID="BtnFiltrar" class="btn btn-primary" runat="server" Text="Filtrar" OnClick="FiltrarUsuarios" />
+                     <asp:Button ID="BtnEliminarFilt" class="btn btn-danger" runat="server" Text="Eliminar filtro" OnClick="BtnEliminarFilt_Click" />
+                </div>
+                <div class="col-md-4">
+                    <a href="EditarUsuario.aspx" class="btn btn-success"> + Agregar Usuario</a>
+                </div>
+            </div>
+
         <!-- ver usuarios -->
         <div>
-            <%
-                Negocio.NegocioUsuario negocioU = new Negocio.NegocioUsuario();
-                List<Clases.Usuario> ListU = negocioU.Listar();
-            %>
+           <% Negocio.NegocioUsuario negocioUsuarios = new Negocio.NegocioUsuario();
+                       
+                      
+              List<Clases.Usuario> ListaUsuarios;
+                       if (Session["nombreFiltro"] != null)
+                        {
+                            ListaUsuarios = negocioUsuarios.listarPorNombre(Session["nombreFiltro"].ToString());
+                        }
+                        else
+                        {
+                          ListaUsuarios = negocioUsuarios.Listar();
+
+                        }
+            %> 
             <table class="table table-success table-striped table-hover">
                 <thead>
                     <tr>
@@ -40,7 +65,7 @@
                 </thead>
                 <tbody>
                     <%
-                        foreach (Clases.Usuario objU in ListU)
+                        foreach (Clases.Usuario objU in ListaUsuarios)
                         {
                     %>
                     <tr>
@@ -56,10 +81,10 @@
                     <% } %>
                 </tbody>
             </table>
-        </div>
+        
 
         <!-- Button to add new user -->
-        <a href="EditarUsuario.aspx" class="btn btn-success">Agregar Usuario</a>
+        
         <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
     </div>
 </asp:Content>
