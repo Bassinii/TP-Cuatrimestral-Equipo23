@@ -34,13 +34,15 @@
                 <div class="mb-3">
                     <label for="txtUsuario" class="form-label">Usuario</label>
                     <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RegularExpressionValidator ErrorMessage="Usuario debe contener entre 5 y 30 caracteres." ControlToValidate="txtUsuario" ValidationExpression="^.{3,30}$" CssClass="text-danger" runat="server" />
                     <asp:RequiredFieldValidator ErrorMessage="El Usuario es requerido." ControlToValidate="txtUsuario" runat="server" CssClass="text-danger" Display="Dynamic" />
                 </div>
                 <div class="mb-3">
                     <label for="txtNombreCompleto" class="form-label">Nombre Completo</label>
                     <asp:TextBox ID="txtNombreCompleto" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ErrorMessage="El Nombre Completo es requerido." ControlToValidate="txtNombreCompleto" runat="server" CssClass="text-danger" Display="Dynamic" />
-                </div>
+                    <asp:RegularExpressionValidator ErrorMessage="El nombre completo debe contener entre 5 y 30 caracteres." ControlToValidate="txtNombreCompleto" ValidationExpression="^.{3,30}$" CssClass="text-danger" runat="server" />
+                    </div>
                 
                 <div class="mb-3">
                     <label for="ddlTipoUsuario" class="form-label">Tipo de Usuario</label>
@@ -53,6 +55,8 @@
                 <div class="mb-3">
                     <label for="txtContrasenia" class="form-label">Contraseña</label>
                     <asp:TextBox ID="txtContrasenia" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revPassword" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="La contraseña debe contener al menos una letra minúscula, un número y tener una longitud mínima de 4 caracteres." 
+                          ValidationExpression="^(?=.*[a-z])(?=.*\d).{4,}$" CssClass="text-danger" />
                     <asp:RequiredFieldValidator ErrorMessage="La Contraseña es requerida." ControlToValidate="txtContrasenia" runat="server" CssClass="text-danger" Display="Dynamic" />
                 </div>
 

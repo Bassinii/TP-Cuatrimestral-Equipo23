@@ -15,6 +15,33 @@ namespace Site
     {
 
         /// <summary>
+        /// Control TextFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextFiltro;
+
+        /// <summary>
+        /// Control BtnFiltrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnFiltrar;
+
+        /// <summary>
+        /// Control BtnEliminarFilt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnEliminarFilt;
+
+        /// <summary>
         /// Control LinkVolver.
         /// </summary>
         /// <remarks>

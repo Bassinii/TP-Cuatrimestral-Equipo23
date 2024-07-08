@@ -43,6 +43,16 @@ namespace Negocio
 
             return vistasDisponibles;
         }
+        public static bool TieneAcceso(Usuario usuario, string pagina)
+        {
+            List<string> vistasDisponibles = ObtenerVistas(usuario);
+
+            // Eliminar la barra inicial si existe
+            string paginaSinParametros = pagina.TrimStart('/').Split('?')[0];
+
+            // Verificar si la página sin parámetros está en la lista de vistas disponibles
+            return vistasDisponibles.Contains(paginaSinParametros);
+        }
     }
 }
    

@@ -19,11 +19,14 @@
             <h1>Gestión de Proveedores</h1>
            
             <div class="mb-3 row">
+
                 <div class="col-md-6">
-                    <input type="text" id="txtFiltro" class="form-control" placeholder="Buscar proveedor...(sin logica)"/>
+                <asp:TextBox ID="TextFiltro" class="form-control"  placeholder="Buscar proveedor..." runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-primary" onclick="filtrarClientes()">Filtrar</button>
+                   <!--<button type="button" class="btn btn-primary" onclick="filtrarClientes()" runat="server" >Filtrar </button>-->
+                    <asp:Button ID="BtnFiltrar" class="btn btn-primary" runat="server" Text="Filtrar" OnClick="FiltrarProveedores" />
+                     <asp:Button ID="BtnEliminarFilt" class="btn btn-danger" runat="server" Text="Eliminar filtro" OnClick="BtnEliminarFilt_Click" />
                 </div>
                 <div class="col-md-4">
                     <a href="EditarProveedor.aspx" class="btn btn-success"> + Agregar Proveedor</a>
@@ -32,43 +35,48 @@
             <!-- Ver Proveedores -->
             <div>
             
-            <%
-                Negocio.NegocioProveedores negocioProveedor = new Negocio.NegocioProveedores();
-                List<Clases.Proveedores> listaProveedores = negocioProveedor.listar();
-            %>
-            <table class="table table-success table-striped table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">ID Proveedor</th>
-                  <th scope="col">DIRECCION </th>
-                  <th scope="col">PROVINCIA</th>
-                  <th scope="col">EMAIL</th>
-                  <th scope="col">TELFONO</th>
-             
-                </tr>
-              </thead>
-              <tbody>
-                  <%
-                      foreach (Clases.Proveedores proveedor in listaProveedores)
-                      {
-                  %>
-                <tr>
-                  
-                  <td><%=proveedor.id %></td>
-                  <td><%=proveedor.direccion %></td>
-                  <td><%=proveedor.provincia %></td>
-                  <td><%=proveedor.email %></td>
-                  <td><%=proveedor.telefono %></td>
-                 
-
-                  <td>
-                <a href='<%= "EditarProveedor.aspx?id=" + proveedor.id %>' class="btn btn-primary btn-sm">Modificar</a>
-                    
-                </td>
-                </tr>
-                    <%} %>
-              </tbody>
-            </table>
+                    <%
+                        Negocio.NegocioProveedores negocioProveedor = new Negocio.NegocioProveedores();
+                        List<Clases.Proveedores> listaProveedores;
+    
+                        if (Session["IDFiltro"] != null)
+                        {
+                            int idFiltro = (int)Session["IDFiltro"];
+                            listaProveedores = negocioProveedor.listar().Where(p => p.id == idFiltro).ToList();
+                        }
+                        else
+                        {
+                            listaProveedores = negocioProveedor.listar();
+                        }
+                    %>
+                    <table class="table table-success table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID Proveedor</th>
+                          <th scope="col">DIRECCION</th>
+                          <th scope="col">PROVINCIA</th>
+                          <th scope="col">EMAIL</th>
+                          <th scope="col">TELFONO</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%
+                            foreach (Clases.Proveedores proveedor in listaProveedores)
+                            {
+                        %>
+                        <tr>
+                          <td><%=proveedor.id %></td>
+                          <td><%=proveedor.direccion %></td>
+                          <td><%=proveedor.provincia %></td>
+                          <td><%=proveedor.email %></td>
+                          <td><%=proveedor.telefono %></td>
+                          <td>
+                            <a href='<%= "EditarProveedor.aspx?id=" + proveedor.id %>' class="btn btn-primary btn-sm">Modificar</a>
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
              </div>
             
 
