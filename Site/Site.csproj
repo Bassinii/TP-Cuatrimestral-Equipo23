@@ -169,7 +169,6 @@
     </Compile>
     <Compile Include="EditarCliente.aspx.cs">
       <DependentUpon>EditarCliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditarCliente.aspx.designer.cs">
       <DependentUpon>EditarCliente.aspx</DependentUpon>
