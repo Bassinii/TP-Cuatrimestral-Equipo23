@@ -16,7 +16,7 @@
         .container {
             max-width: calc(100% - 250px); /* Ajusta el ancho para dejar espacio para el sidebar */
             margin-top: 100px; /* Ajusta según la altura de tu navbar */
-            margin-left: 270px !important; /* Deja espacio para el sidebar */
+            margin-left: 25% !important; /* Deja espacio para el sidebar */
         }
 
         .card {
@@ -92,7 +92,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="d-flex">
-        <div id="sidebar" class="bg-light p-3" style="width: 270px; position: fixed; top: 9.5%; /* ajusta según la altura de tu navbar */
+        <div id="sidebar" class="bg-light p-3" style="width: 25%; position: fixed; top: 9.5%; /* ajusta según la altura de tu navbar */
             left: 0; /* ajusta según la altura de tu navbar */
             overflow-y: auto; padding: 10px; box-sizing: border-box; background-color: #f8f9fa; /* color de fondo */
             z-index: 1000;
@@ -102,7 +102,6 @@
                 <!-- Aquí se agregarán las tarjetas del carrito -->
             </div>
         </div>
-
         <div class="container mt-5" id="article-list" style="margin-left: 270px; margin-top: 78px !important; margin-right: 24px;">
             <div class="row row-cols-2 row-cols-md-4 g-4">
                 <% foreach (Clases.Articulo articulo in ListArticulos)
@@ -110,7 +109,7 @@
                 <div class="col">
                     <div class="card h-100" onclick="addToCart('<%= articulo.nombre %>', <%= articulo.precio %>, 'https://images.deliveryhero.io/image/pedidosya/products/6d298228-77c7-4fe8-b928-5b9142021154.jpg?quality=90&width=1280&webp=1')">
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="z-index: 800;">$<%=articulo.precio %></span>
-                        <img src="https://images.deliveryhero.io/image/pedidosya/products/6d298228-77c7-4fe8-b928-5b9142021154.jpg?quality=90&width=1280&webp=1" class="card-img-top" alt="Imagen del producto">
+                        <img src="https://i.imgur.com/6WZ0WPP.jpg" class="card-img-top" alt="Imagen del producto"/>
                         <div class="card-body">
                             <h5 class="card-title"><%= articulo.nombre %></h5>
                         </div>
@@ -120,24 +119,4 @@
             </div>
         </div>
     </div>
-
-    <%--<script>
-        function addToCart(name, price, image) {
-            // Crear un nuevo elemento div para la tarjeta del carrito
-            var cartItem = document.createElement('div');
-            cartItem.className = 'cart-item';
-            cartItem.innerHTML = `
-                <img src="${image}" alt="Imagen del producto">
-                <div class="cart-item-details">
-                    <p class="cart-item-title">${name}</p>
-                    <p class="cart-item-price">$${price}</p>
-                </div>
-            `;
-
-            // Agregar la tarjeta al contenedor del carrito
-            document.getElementById('cart-items').appendChild(cartItem);
-
-
-        }
-    </script>--%>
 </asp:Content>

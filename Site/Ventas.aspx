@@ -1,48 +1,101 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ventas.aspx.cs" Inherits="Site.Ventas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Ventas.aspx.cs" Inherits="Site.Formulario_web13" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <style>
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Gestión de Ventas</title>
-</head>
-<body>
-    <h1>Gestión de Ventas</h1>
-    <form id="form1" runat="server">
-        <!-- nueva venta -->
-    <div>
-    <h2>Nueva Venta</h2>
-            <label>Empleado</label>
-            <p>se muestra DropDownListEmpleado existentes</p>
-            <br />
-            <label>Cliente</label>
-            <p>se muestra DropDownListClientes existentes</p>
-             <br />
-            <p>se autocompletan automaticamente cuando se agregue la funcionalidad</p>
-            <label>Nro de Factura: </label>
-            <asp:TextBox ID="TextBoxFactura" runat="server" ReadOnly="true"></asp:TextBox>
-            <br />
-            <label>Fecha</label>
-            <asp:TextBox ID="TextBoxFecha" runat="server" ReadOnly="true"></asp:TextBox>
-            <br />
-            <label>Hora</label>
-            <asp:TextBox ID="TextBoxHora" runat="server" ReadOnly="true"></asp:TextBox>
-            <br />
-            <h3>Detalles de la Venta</h3>
-            <p>Cargamos datos de la venta: articulo, cantidad, precio.</p>
-            <asp:Button ID="BtnAgregarDetalle" runat="server" Text="Agregar Detalle" Visible="false" />
-            <br /><br />
-            <label>Subtotal</label>
-            <asp:TextBox ID="TextBoxSubtotal" runat="server"></asp:TextBox>
-            <br />
-            <label>Total</label>
-            <asp:TextBox ID="TextBoxTotal" runat="server"></asp:TextBox>
-            <br />
-            <asp:Button ID="BtnGuardarVenta" runat="server" Text="Generar Venta" />
-            <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" Visible="true" />
+            .btn-primary:hover {
+                background-color: #218838;
+                border-color: #1e7e34;
+            }
+
+        .container {
+            margin-top: 50px; /* Ajustar espacio superior para navbar fija */
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container">
+
+        <h1>Gestión de Ventas</h1>
+        <%--<!-- Filtro y botón para agregar nuevo artículo -->
+        <div class="mb-3 row">
+            <div class="col-md-6">
+                <asp:TextBox ID="TextFiltro" runat="server" CssClass="form-control" placeholder="Buscar artículo por nombre..." />
+            </div>
+            <div class="col-md-2">
+                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Filtrar" OnClick="Button1_Click" />
+                <asp:Button ID="BtnEliminarFilt" runat="server" CssClass="btn btn-danger" Text="Eliminar filtro" OnClick="BtnEliminarFilt_Click" />
+            </div>
+            <div class="col-md-4">
+                <a href="EditarArticulo.aspx" class="btn btn-success">+ Nuevo</a>
+            </div>
+        </div>--%>
+        <!-- Ver Articulos -->
+        <div>
+            <table class="table table-success table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID Artículo</th>
+                        <th scope="col">ID Empleado</th>
+                        <th scope="col">ID Cliente</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Pedidos Ya</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% 
+                        Negocio.NegocioVenta negocioArticulo = new Negocio.NegocioVenta();
+                        List<Clases.Venta> listVentas;
+
+                        //if (Session["nombreFiltro"] != null)
+                        //{
+                        //    listVentas = negocioArticulo.listarPorNombre(Session["nombreFiltro"].ToString());
+                        //}
+                        //else
+                        //{
+                        listVentas = negocioArticulo.listar();
+                        //}
+
+                        foreach (Clases.Venta objArticulo in listVentas)
+                        {
+                    %>
+                    <tr>
+                        <td><%= objArticulo.id %></td>
+                        <td><%= objArticulo.idEmpleado %></td>
+                        <td><%= objArticulo.idCliente %></td>
+                        <td><%= objArticulo.fecha %></td>
+                        <td><%= objArticulo.hora %></td>
+                        <td><%= objArticulo.total %></td>
+
+                        <%if (objArticulo.esPedidosYa)
+                            {%>
+                                <td>Si</td>
+                           <% }
+                            else
+                            {%>
+                                <td>No</td>
+                           <% } %>
+
+                        <td>
+                            <a href='<%= "EditarArticulo.aspx?id=" + objArticulo.id %>' class="btn btn-primary btn-sm">Modificar</a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
-    </form>
-    <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
-</body>
-</html>
+
+        <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</asp:Content>

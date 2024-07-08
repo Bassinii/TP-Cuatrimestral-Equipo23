@@ -7,9 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Site {
-    
-    
-    public partial class Formulario_web1 {
+namespace Site
+{
+
+
+    public partial class Formulario_web1
+    {
     }
 }

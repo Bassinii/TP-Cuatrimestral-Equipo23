@@ -1,17 +1,19 @@
 ﻿<%@ Page Title="Gestion de Articulos" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Articulos.aspx.cs" Inherits="Site.Formulario_web11" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <style>
         .btn-primary {
             background-color: #28a745;
             border-color: #28a745;
         }
-        .btn-primary:hover {
-            background-color: #218838;
-            border-color: #1e7e34;
-        }
+
+            .btn-primary:hover {
+                background-color: #218838;
+                border-color: #1e7e34;
+            }
+
         .container {
             margin-top: 50px; /* Ajustar espacio superior para navbar fija */
         }
@@ -21,8 +23,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
 
-            <h1>Gestión de Artículos</h1>
-               <!-- Filtro y botón para agregar nuevo artículo -->
+        <h1>Gestión de Artículos</h1>
+        <!-- Filtro y botón para agregar nuevo artículo -->
         <div class="mb-3 row">
             <div class="col-md-6">
                 <asp:TextBox ID="TextFiltro" runat="server" CssClass="form-control" placeholder="Buscar artículo por nombre..." />
@@ -32,11 +34,11 @@
                 <asp:Button ID="BtnEliminarFilt" runat="server" CssClass="btn btn-danger" Text="Eliminar filtro" OnClick="BtnEliminarFilt_Click" />
             </div>
             <div class="col-md-4">
-                <a href="EditarArticulo.aspx" class="btn btn-success"> + Nuevo</a>
+                <a href="EditarArticulo.aspx" class="btn btn-success">+ Nuevo</a>
             </div>
         </div>
-            <!-- Ver Articulos -->
-         <div>
+        <!-- Ver Articulos -->
+        <div>
             <table class="table table-success table-striped table-hover">
                 <thead>
                     <tr>
@@ -81,7 +83,7 @@
                 </tbody>
             </table>
         </div>
-        
+
         <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
     </div>
 

@@ -22,3 +22,9 @@ C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.
 C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
 C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.dll
 C:\Users\Bruno\Desktop\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.pdb
+C:\Users\fsgbr\Desktop\TP-Cuatrimestral-Equipo23\Clases\bin\Debug\Clases.dll
+C:\Users\fsgbr\Desktop\TP-Cuatrimestral-Equipo23\Clases\bin\Debug\Clases.pdb
+C:\Users\fsgbr\Desktop\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+C:\Users\fsgbr\Desktop\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\fsgbr\Desktop\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.dll
+C:\Users\fsgbr\Desktop\TP-Cuatrimestral-Equipo23\Clases\obj\Debug\Clases.pdb
