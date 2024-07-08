@@ -12,7 +12,6 @@ namespace Negocio
     {
         public List<Articulo> listar()
         {
-
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datosArticulo = new AccesoDatos();
             try
@@ -26,17 +25,21 @@ namespace Negocio
                     aux.id = datosArticulo.Lector.GetInt32(0);
                     aux.stock = datosArticulo.Lector.GetInt32(1);
                     aux.nombre = datosArticulo.Lector.GetString(2);
-                    aux.precio = (float)datosArticulo.Lector.GetDecimal(3); 
-                    aux.marca = new Marca { nombre = datosArticulo.Lector.GetString(4), id = datosArticulo.Lector.GetInt32(0) }; // Ajustar el índice según los campos correctos
+                    aux.precio = (float)datosArticulo.Lector.GetDecimal(3);
+                    aux.marca = new Marca { nombre = datosArticulo.Lector.GetString(4) };
 
-                    if (!datosArticulo.Lector.IsDBNull(datosArticulo.Lector.GetOrdinal("Categoria")))
+                    // Ajustar los índices de acuerdo a las columnas seleccionadas en la consulta
+                    if (!datosArticulo.Lector.IsDBNull(5))
                     {
-                        aux.categoria = new Categoria { nombre = datosArticulo.Lector.GetString(5), id = datosArticulo.Lector.GetInt32(0) }; // Ajustar el índice según los campos correctos
+                        aux.categoria = new Categoria { nombre = datosArticulo.Lector.GetString(5) };
                     }
                     else
                     {
                         aux.categoria = new Categoria { nombre = "Sin categoría" };
                     }
+
+                    // Obtener las imágenes para este artículo
+                    aux.imagenes = GetImagenes(aux.id);
 
                     lista.Add(aux);
                 }
@@ -54,20 +57,22 @@ namespace Negocio
             }
         }
 
+
         public List<Imagen> GetImagenes(int idArti)
         {
             List<Imagen> lista = new List<Imagen>();
             AccesoDatos datosArticulo = new AccesoDatos();
             try
-            {         
-                datosArticulo.setearConsulta("SELECT ImagenUrl FROM IMAGENES WHERE IdArticulo = @IdArticulo");
-                datosArticulo.setearParametro("@IdArticulo", idArti);
+            {
+                datosArticulo.setearConsulta("SELECT URL_Imagen, ID_Imagen FROM IMAGENES WHERE ID_Articulo = @ID_Articulo");
+                datosArticulo.setearParametro("@ID_Articulo", idArti);
                 datosArticulo.ejecutarLectura();
 
                 while (datosArticulo.Lector.Read())
                 {
-                    string urlImagen = (string)datosArticulo.Lector["ImagenUrl"];
-                    Imagen imagen = new Imagen(idArti, urlImagen);
+                    string URL_Imagen = datosArticulo.Lector.GetString(0); // Asegurarse del índice correcto
+                    int ID_Imagen = datosArticulo.Lector.GetInt32(1); // Asegurarse del índice correcto
+                    Imagen imagen = new Imagen(idArti, URL_Imagen, ID_Imagen);
                     lista.Add(imagen);
                 }
 
@@ -75,10 +80,15 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
+            finally
+            {
+                datosArticulo.CerrarConexion();
+            }
         }
+
+
         public void agregar(Articulo nuevoArticulo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -119,7 +129,8 @@ namespace Negocio
                     aux.nombre = datosArticulo.Lector.GetString(2);
                     aux.precio = (float)datosArticulo.Lector.GetDecimal(3);
                     aux.marca = new Marca { id = datosArticulo.Lector.GetInt32(4), nombre = datosArticulo.Lector.GetString(5) };
-                    if (!datosArticulo.Lector.IsDBNull(datosArticulo.Lector.GetOrdinal("Categoria")))
+
+                    if (!datosArticulo.Lector.IsDBNull(7))
                     {
                         aux.categoria = new Categoria { id = datosArticulo.Lector.GetInt32(6), nombre = datosArticulo.Lector.GetString(7) };
                     }
@@ -127,6 +138,9 @@ namespace Negocio
                     {
                         aux.categoria = new Categoria { nombre = "Sin categoría" };
                     }
+
+                    // Obtener las imágenes para este artículo
+                    aux.imagenes = GetImagenes(aux.id);
 
                     return aux;
                 }
@@ -144,6 +158,7 @@ namespace Negocio
                 datosArticulo.CerrarConexion();
             }
         }
+
 
         public void actualizar(Articulo nuevoArticulo)
         {
@@ -187,6 +202,7 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+
         public List<Articulo> listarPorNombre(string nombre)
         {
             List<Articulo> lista = new List<Articulo>();
@@ -211,6 +227,9 @@ namespace Negocio
                     articulo.marca = new Marca { nombre = datosArticulo.Lector.GetString(4) };
                     articulo.categoria = new Categoria { nombre = datosArticulo.Lector.GetString(5) };
 
+                    // Obtener las imágenes para este artículo
+                    articulo.imagenes = GetImagenes(articulo.id);
+
                     lista.Add(articulo);
                 }
                 return lista;
@@ -226,6 +245,4 @@ namespace Negocio
             }
         }
     }
-
-
 }
