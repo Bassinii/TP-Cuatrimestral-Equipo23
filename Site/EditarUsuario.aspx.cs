@@ -124,7 +124,7 @@ namespace Site
                 try
                 {
                     negocioUsuario.Eliminar(int.Parse(idUsuario));
-                    Response.Redirect("VentanaUsuarios.aspx");
+                    Response.Redirect("Usuarios.aspx");
                 }
                 catch (Exception ex)
                 {

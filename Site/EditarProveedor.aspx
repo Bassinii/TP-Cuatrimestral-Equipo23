@@ -32,18 +32,30 @@
                 <div class="mb-3">
                     <label for="txtDireccion" class="form-label">Direccion</label>
                     <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                     <asp:RequiredFieldValidator ErrorMessage="La direccion es requerida." ControlToValidate="txtDireccion" runat="server" CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ErrorMessage="Direccion debe contener entre 3 y 30 caracteres." ControlToValidate="txtDireccion" ValidationExpression="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,30}$" CssClass="text-danger" runat="server" />
+                   
                 </div>
                 <div class="mb-3">
                     <label for="txtProvincia" class="form-label">Provincia</label>
                     <asp:TextBox ID="txtProvincia" runat="server" CssClass="form-control"></asp:TextBox>
+                      <asp:RequiredFieldValidator ErrorMessage="La provincia es requerida." ControlToValidate="txtProvincia" runat="server" CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ErrorMessage="Provincia debe contener solo letras y tener entre 5 y 30 caracteres." ControlToValidate="txtProvincia" ValidationExpression="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,30}$" CssClass="text-danger" runat="server" />
+                   
                 </div>
                 <div class="mb-3">
                     <label for="txtEmail" class="form-label">Correo Electronico</label>
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtEmail" ErrorMessage="El Correo Electrónico es requerido." runat="server" CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ErrorMessage="Ingresar solo formato email" ControlToValidate="txtEmail" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov)$" CssClass="text-danger" runat="server" />
+               
                 </div>
                 <div class="mb-3">
                     <label for="txtTelefono" class="form-label">Telefono</label>
                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtTelefono" ErrorMessage="El Teléfono es requerido." runat="server" CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ErrorMessage="Solo números (7 a 15 dígitos)." ControlToValidate="txtTelefono" ValidationExpression="^\d{7,15}$" CssClass="text-danger" runat="server" />
+              
                 </div>
                 
                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click" />

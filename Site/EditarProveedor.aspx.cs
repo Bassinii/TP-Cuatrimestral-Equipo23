@@ -40,6 +40,9 @@ namespace Site
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
             string direccion = txtDireccion.Text;
             string provincia = txtProvincia.Text;
             string email = txtEmail.Text;
