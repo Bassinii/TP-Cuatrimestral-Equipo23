@@ -70,6 +70,7 @@ namespace Site
                 // Seleccionar la categoría y marca en los DropDownLists
                 ddlCategoria.SelectedValue = articulo.categoria.id.ToString();
                 ddlMarca.SelectedValue = articulo.marca.id.ToString();
+                
             }
         }
 
@@ -114,7 +115,8 @@ namespace Site
                         stock = stock,
                         precio = precio,
                         categoria = new Categoria { id = idCategoria },
-                        marca = new Marca { id = idMarca }
+                        marca = new Marca { id = idMarca },
+                        
                     };
                     negocioArticulo.agregar(nuevoArticulo);
                 }

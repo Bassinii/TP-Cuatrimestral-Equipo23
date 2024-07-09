@@ -16,7 +16,7 @@
             border-color: #1e7e34; 
         }
         .container {
-            margin-top: 100px; /* Ajustar espacio superior para navbar fija */
+            margin-top: 50px; /* Ajustar espacio superior para navbar fija */
         }
         </style>
     </asp:Content>
@@ -24,7 +24,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
-
+    <div class="container">
             <h1>Gestión de Clientes</h1>
                 <!-- Filtro y botón para agregar nuevo cliente -->
             <div class="mb-3 row">
@@ -99,6 +99,7 @@
            
         <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
     </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script>

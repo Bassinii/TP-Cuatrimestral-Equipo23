@@ -21,7 +21,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
 
-        <h1>Gestión de Ventas</h1>
+        <h1>Historial de ventas</h1>
         <%--<!-- Filtro y botón para agregar nuevo artículo -->
         <div class="mb-3 row">
             <div class="col-md-6">
@@ -40,14 +40,14 @@
             <table class="table table-success table-striped table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">ID Artículo</th>
+                        <th scope="col">ID Venta</th>
                         <th scope="col">ID Empleado</th>
-                        <th scope="col">ID Cliente</th>
+                        <%--<th scope="col">ID Cliente</th>--%>
                         <th scope="col">Fecha</th>
-                        <th scope="col">Hora</th>
+                        <%--<th scope="col">Hora</th>--%>
                         <th scope="col">Total</th>
                         <th scope="col">Pedidos Ya</th>
-                        <th scope="col">Accion</th>
+                      <%--  <th scope="col">Accion</th>--%>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,10 +70,10 @@
                     <tr>
                         <td><%= objArticulo.id %></td>
                         <td><%= objArticulo.idEmpleado %></td>
-                        <td><%= objArticulo.idCliente %></td>
+                        <%--<td><%= objArticulo.idCliente %></td>--%>
                         <td><%= objArticulo.fecha %></td>
-                        <td><%= objArticulo.hora %></td>
-                        <td><%= objArticulo.total %></td>
+                        <%--<td><%= objArticulo.hora %></td>--%>
+                        <td>$<%= objArticulo.total %></td>
 
                         <%if (objArticulo.esPedidosYa)
                             {%>
@@ -84,16 +84,16 @@
                                 <td>No</td>
                            <% } %>
 
-                        <td>
+                        <%--<td>
                             <a href='<%= "EditarArticulo.aspx?id=" + objArticulo.id %>' class="btn btn-primary btn-sm">Modificar</a>
-                        </td>
+                        </td>--%>
                     </tr>
                     <% } %>
                 </tbody>
             </table>
         </div>
 
-        <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
+      <%--  <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>--%>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

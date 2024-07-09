@@ -55,7 +55,7 @@ namespace Site
                 navbar.Controls.Add(ulInicio);
                 // Agregar las vistas por defecto al navbar
                 LiteralControl lcInicio = new LiteralControl();
-                lcInicio.Text = "<li class='nav-item'><a class='nav-link' href='Default.aspx'>Inicio</a></li>";
+                //lcInicio.Text = "<li class='nav-item'><a class='nav-link' href='Default.aspx'>Inicio</a></li>";
                 navbar.Controls.Add(lcInicio);
 
 
@@ -69,7 +69,7 @@ namespace Site
         protected void BtnSalir_Click(object sender, EventArgs e)
         {
             Session["usuario"] = null; // Eliminar la sesión del usuario
-            Response.Redirect("Default.aspx"); // Redirigir a la página de inicio u otra página después de cerrar sesión
+            Response.Redirect("Login.aspx"); // Redirigir a la página de inicio u otra página después de cerrar sesión
         }
 
         private string ObtenerNombreVista(string vista)

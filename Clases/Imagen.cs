@@ -17,5 +17,6 @@ namespace Clases
             this.idArticulo = idA;
             this.url = urlImag;
         }
+        public Imagen() { }
     }
 }

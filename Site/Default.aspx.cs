@@ -45,11 +45,36 @@ namespace Site
 
             }
             totalCarrito = ListCarrito.Sum(articulo => articulo.precio * articulo.cantidad);
+
+            if (!IsPostBack)
+            {
+                DropDownList1.Items.Add(new ListItem("Efectivo", "Efectivo"));
+                DropDownList1.Items.Add(new ListItem("Debito", "Debito"));
+                DropDownList1.Items.Add(new ListItem("Credito", "Credito"));
+                DropDownList1.Items.Add(new ListItem("MercadoPago", "MercadoPago"));
+            }
         }
 
         protected void ButtonFinalizarCompra_Click(object sender, EventArgs e)
         {
+            Venta venta = new Venta();
+            NegocioVenta negocioVenta = new NegocioVenta();
 
+            venta.total = totalCarrito;
+            venta.esPedidosYa = CheckBoxPedidosYa.Checked;
+            venta.subtotal = totalCarrito;
+            venta.idEmpleado = 2;
+            venta.idCliente = 1;
+            
+
+            negocioVenta.agregar(venta);
+
+            // Limpiar el carrito
+            ListCarrito.Clear();
+            Session["Carrito"] = ListCarrito;
+
+            // Actualizar la página o redirigir
+            Response.Redirect("Default.aspx");
         }
     }
 }

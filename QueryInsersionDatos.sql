@@ -8,35 +8,35 @@ INSERT INTO Categorias (Nombre) VALUES
 
 -- Inserción de datos en la tabla Marcas
 INSERT INTO Marcas (Nombre) VALUES 
-('Marca1'),
-('Marca2'),
-('Marca3'),
-('Marca4'),
-('Marca5');
+('Hache'),
+('Rochino'),
+('El galpon'),
+('Boutique'),
+('Las Quinas');
 
 -- Inserción de datos en la tabla Articulos
 INSERT INTO Articulos (Stock, Nombre, Precio_Unitario, ID_Categoria, ID_Marca) VALUES 
-(100, 'Budin Grande Chocolate & Chips', 4990.00, 2, 1),
-(80, 'Budin Grande Limon & Amapola', 4990.00, 2, 2),
-(60, 'Budin Grande Carrot & Nueces', 4990.00, 2, 3),
-(90, 'Budin Grande Naranja & Chia', 4990.00, 2, 4),
-(50, 'Bandeja de Surtidas', 6350.00, 2, 5),
-(120, 'Cuadrado de Brownie', 3990.00, 2, 1),
-(200, 'Pan Blanco', 4600.00, 1, 2),
-(180, 'Pan Negro', 4600.00, 1, 3),
-(150, 'Pan de Semillas', 4600.00, 1, 4);
+(100, 'Brownie', 3990.00, 2, 1),
+(80, 'Lemonie', 2850.00, 2, 2),
+(60, 'Frola', 2750, 2, 3),
+(90, 'Cookies Choco', 3100.00, 2, 4),
+(50, 'Cookies Miel', 2900.00, 2, 5),
+(120, 'Cookies Almendras', 3200.00, 2, 1),
+(200, 'Alfajores Choco', 4600.00, 1, 2),
+(180, 'Alfajores Sablee', 4600.00, 1, 3),
+(150, 'Alfajores Maicena', 4600.00, 1, 4);
 
 -- Inserción de datos en la tabla Imagenes
 INSERT INTO Imagenes (ID_Articulo, URL_Imagen) VALUES 
-(1, 'https://example.com/image1.jpg'),
-(2, 'https://example.com/image2.jpg'),
-(3, 'https://example.com/image3.jpg'),
-(4, 'https://example.com/image4.jpg'),
-(5, 'https://example.com/image5.jpg'),
-(6, 'https://example.com/image6.jpg'),
-(7, 'https://example.com/image7.jpg'),
-(8, 'https://example.com/image8.jpg'),
-(9, 'https://example.com/image9.jpg');
+(1, 'https://i.imgur.com/PSti4qH.jpeg'),
+(2, 'https://i.imgur.com/6WZ0WPP.jpeg'),
+(3, 'https://i.imgur.com/qj9nnDq.jpeg'),
+(4, 'https://i.imgur.com/u6lDS3X.jpeg'),
+(5, 'https://i.imgur.com/biGdoiR.jpeg'),
+(6, 'https://i.imgur.com/l5DFzyB.jpeg'),
+(7, 'https://i.imgur.com/qJvDcSC.jpeg'),
+(8, 'https://i.imgur.com/C89u87L.jpeg'),
+(9, 'https://i.imgur.com/jZPfGls.jpeg');
 
 -- Inserción de datos en la tabla Empleados
 INSERT INTO Empleados (Nombre, Apellido, Legajo, Contrasenia) VALUES 
@@ -68,17 +68,17 @@ INSERT INTO Proveedores(Direccion, Provincia, Mail, Telefono) VALUES
 ('657 Antonio Vespucio', 'Buenos Aires', 'jose.sito@example.com', '2234562356');
 
 -- Inserción de datos en la tabla Ventas
-INSERT INTO Ventas (ID_Empleado, ID_Cliente, Fecha, Hora, Subtotal, Total, EsPedidosYa) VALUES 
-(1, 1, GETDATE(), '10:00:00', 4990.00, 4990.00, 0),
-(2, 2, GETDATE(), '11:00:00', 4990.00, 4990.00, 0),
-(3, 3, GETDATE(), '12:00:00', 4990.00, 4990.00, 0),
-(4, 4, GETDATE(), '13:00:00', 4990.00, 4990.00, 1),
-(5, 5, GETDATE(), '14:00:00', 6350.00, 6350.00, 0),
-(6, 1, GETDATE(), '15:00:00', 3990.00, 3990.00, 0),
-(7, 2, GETDATE(), '16:00:00', 4600.00, 4600.00, 1),
-(8, 3, GETDATE(), '17:00:00', 4600.00, 4600.00, 0),
-(9, 4, GETDATE(), '18:00:00', 4600.00, 4600.00, 1),
-(10, 5, GETDATE(), '19:00:00', 4600.00, 4600.00, 0);
+INSERT INTO Ventas (ID_Empleado, ID_Cliente, Fecha, Subtotal, Total, EsPedidosYa) VALUES 
+(1, 1, GETDATE(), 4990.00, 4990.00, 0),
+(2, 2, GETDATE(), 4990.00, 4990.00, 0),
+(3, 3, GETDATE(), 4990.00, 4990.00, 0),
+(4, 4, GETDATE(), 4990.00, 4990.00, 1),
+(5, 5, GETDATE(), 6350.00, 6350.00, 0),
+(6, 1, GETDATE(), 3990.00, 3990.00, 0),
+(7, 2, GETDATE(), 4600.00, 4600.00, 1),
+(8, 3, GETDATE(), 4600.00, 4600.00, 0),
+(9, 4, GETDATE(), 4600.00, 4600.00, 1),
+(10, 5, GETDATE(), 4600.00, 4600.00, 0);
 
 -- Inserción de datos en la tabla DetallesVentas
 INSERT INTO DetallesVentas (ID_Venta, ID_Articulo, Cantidad, Precio_Unitario, Porcentaje_Descuento) VALUES 

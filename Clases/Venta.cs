@@ -16,6 +16,6 @@ namespace Clases
         public float subtotal { get; set; }
         public float total { get; set; }
         public bool esPedidosYa { get; set; }
-        public List<DetalleVenta> ListDetalleVenta { get; set; }
+        //public List<DetalleVenta> ListDetalleVenta { get; set; }
     }
 }

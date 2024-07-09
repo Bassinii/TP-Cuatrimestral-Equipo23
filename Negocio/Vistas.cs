@@ -16,8 +16,8 @@ namespace Negocio
             // Por defecto, todos los usuarios tienen acceso al inicio y al login
             if(usuario == null)
             {
-                vistasDisponibles.Add("Default.aspx");
-                //vistasDisponibles.Add("Login.aspx");
+                //vistasDisponibles.Add("Default.aspx");
+                vistasDisponibles.Add("Login.aspx");
                 return vistasDisponibles;
             }
 

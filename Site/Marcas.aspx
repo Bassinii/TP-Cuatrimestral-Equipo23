@@ -13,14 +13,14 @@
             background-color: #218838; /* Verde más oscuro para el hover */
             border-color: #1e7e34; /* Verde más oscuro para el hover */
         }
-        .content-container {
-            margin-top: 100px; /* Ajustar espacio superior para navbar fija */
+        .container {
+            margin-top: 50px; /* Ajustar espacio superior para navbar fija */
         }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="content-container">
+    <div class="container">
         <h1>Gestión de Marcas</h1>
         <!-- ver marcas -->
         <div>
@@ -56,7 +56,7 @@
 
         <!-- Button to add new brand -->
         <a href="EditarMarca.aspx" class="btn btn-success">Agregar Marca</a>
-        <asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>
+        <%--<asp:HyperLink ID="LinkVolver" runat="server" NavigateUrl="default.aspx">Volver a Inicio</asp:HyperLink>--%>
     </div>
 </asp:Content>
 

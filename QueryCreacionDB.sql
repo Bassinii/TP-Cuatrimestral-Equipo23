@@ -32,7 +32,6 @@ CREATE TABLE Imagenes (
     ID_Imagen INT IDENTITY(1,1) PRIMARY KEY,
     ID_Articulo INT NOT NULL,
     URL_Imagen VARCHAR(300) NOT NULL,
-    CONSTRAINT FK_Imagenes_Articulos FOREIGN KEY (ID_Articulo) REFERENCES Articulos(ID_Articulo)
 );
 
 CREATE TABLE Empleados(
@@ -68,7 +67,7 @@ CREATE TABLE Ventas (
     ID_Empleado INT NOT NULL,
 	ID_Cliente INT NOT NULL,  -- Nueva columna para clientes
     Fecha DATETIME DEFAULT GETDATE() NOT NULL,
-    Hora TIME NOT NULL,
+    Hora TIME NULL,
     Subtotal DECIMAL(8,2) NOT NULL,
     Total DECIMAL(8, 2) NOT NULL,
     EsPedidosYa BIT NULL,
@@ -132,3 +131,13 @@ BEGIN
     VALUES (@ID_Articulo, @Precio_Anterior, @Precio_Nuevo);
 END;
 GO
+
+CREATE TRIGGER trg_SetHoraDefault
+ON Ventas
+AFTER INSERT
+AS
+BEGIN
+    UPDATE Ventas
+    SET Hora = CAST(GETDATE() AS TIME)
+    WHERE ID_Venta IN (SELECT ID_Venta FROM inserted);
+END;

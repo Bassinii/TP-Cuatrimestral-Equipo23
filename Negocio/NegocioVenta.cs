@@ -32,7 +32,7 @@ namespace Negocio
                     aux.esPedidosYa = datosVenta.Lector.GetBoolean(7);
 
                     // Obtener los detalles de la venta y asignarlos
-                    aux.ListDetalleVenta = listarDetalles(aux.id);
+                    //aux.ListDetalleVenta = listarDetalles(aux.id);
 
                     lista.Add(aux);
                 }
@@ -84,6 +84,39 @@ namespace Negocio
             finally
             {
                 datosDetalleVenta.CerrarConexion();
+            }
+        }
+        public void agregar(Venta nuevaVenta)
+        {
+            AccesoDatos datosVenta = new AccesoDatos();
+            try
+            {
+                datosVenta.setearConsulta("INSERT INTO Ventas (ID_Empleado, ID_Cliente, Subtotal, Total, EsPedidosYa) VALUES (@ID_Empleado, @ID_Cliente, @Subtotal, @Total, @EsPedidosYa)");
+                datosVenta.setearParametro("@ID_Empleado", nuevaVenta.idEmpleado);
+                datosVenta.setearParametro("@ID_Cliente", nuevaVenta.idCliente);
+                datosVenta.setearParametro("@Subtotal", nuevaVenta.subtotal);
+                datosVenta.setearParametro("@Total", nuevaVenta.total);
+                datosVenta.setearParametro("@EsPedidosYa", nuevaVenta.esPedidosYa);
+
+                datosVenta.ejecutarAccion();
+
+                // Obtener el ID de la venta recién insertada
+                //nuevaVenta.id = datosVenta.obtenerUltimoIDInsertado();
+
+                // Insertar los detalles de la venta
+                //foreach (DetalleVenta detalle in nuevaVenta.ListDetalleVenta)
+                //{
+                //    agregarDetalleVenta(detalle, nuevaVenta.id);
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                datosVenta.CerrarConexion();
             }
         }
     }
