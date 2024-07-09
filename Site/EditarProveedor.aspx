@@ -32,8 +32,8 @@
                 <div class="mb-3">
                     <label for="txtDireccion" class="form-label">Direccion</label>
                     <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
-                     <asp:RequiredFieldValidator ErrorMessage="La direccion es requerida." ControlToValidate="txtDireccion" runat="server" CssClass="text-danger" Display="Dynamic" />
-                    <asp:RegularExpressionValidator ErrorMessage="Direccion debe contener entre 3 y 30 caracteres." ControlToValidate="txtDireccion" ValidationExpression="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,30}$" CssClass="text-danger" runat="server" />
+                    <asp:RequiredFieldValidator ErrorMessage="La direccion es requerida." ControlToValidate="txtDireccion" runat="server" CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ErrorMessage="Direccion debe contener entre 3 y 30 caracteres, incluyendo letras y números." ControlToValidate="txtDireccion" ValidationExpression="^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s]{3,30}$" CssClass="text-danger" runat="server" />
                    
                 </div>
                 <div class="mb-3">
